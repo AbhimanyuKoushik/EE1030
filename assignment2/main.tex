@@ -1,0 +1,232 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{gvv}                                        
+\usepackage[latin1]{inputenc}     
+\usepackage{xparse}
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{multicol}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\begin{document}
+\title{Assignment 2}
+\author{EE24Btech11024 - G. Abhimanyu Koushik}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{enumerate}
+    \item If the mean deviation of the numbers $1, 1+d, 1+2d, \dots, 1+100d$ from their mean is $255$, then $d$ is equal to:
+    
+    \hfill{\brak{2009}}
+    \begin{enumerate}[label=(\alph*)]
+    \begin{multicols}{4}
+        \item $20$
+        \item $10.1$
+        \item $20.2$
+        \item $10$
+    \end{multicols}
+    \end{enumerate}
+    
+    \item Let $S$ be a non-empty subset of $R$. Consider the following statement:\\
+    $P$: There is a rational number $x \in S$ such that $x>0$.\\
+    Which of the following is the negation of statement $P$?
+    
+    \hfill{(2010)}
+    \begin{enumerate}[label=(\alph*)]
+    \item There is no rational number $x \in S$ such that $x \leq 0$.
+    \item Every rational number $x \in S$ satisfies $x \leq 0$.
+    \item $x \in S$ and $x \leq 0 \longrightarrow x$ is not rational.
+    \item There is a rational number $x \in S$ such that $x \leq 0$.
+    \end{enumerate}
+    
+    \item Consider the following relations: \\
+    $R = \cbrak{\brak{x, y} \mid x,y \text{ are real numbers and } x = wq \text{ for some rational number } w};$ \\
+    $S = \cbrak{\brak{\frac{m}{n}, \frac{p}{q}} \mid m, n, p, q \text{ are integers such that } n \neq 0, q \neq 0 \text{ and } qm = pn}$
+    
+    \hfill{\brak{2010}}
+    \begin{enumerate}[label=(\alph*)]
+        \item Neither $R$ nor $S$ is an equivalence relation.
+        \item $S$ is an equivalence relation but $R$ is not.
+        \item $R$ and $S$ both are equivalence relations.
+        \item $R$ is an equivalence relation but $S$ is not.
+    \end{enumerate}
+    
+    \item For two data sets, each of size 5, the variances are given to be 4 and 5 and the corresponding means are given to be 2 and 4, respectively. The variance of the combined data set is
+    
+    \hfill{\brak{2010}}
+    \begin{enumerate}[label=(\alph*)]
+    \begin{multicols}{4}
+        \item $\frac{11}{2}$
+        \item $6$
+        \item $\frac{13}{2}$
+        \item $\frac{5}{2}$
+    \end{multicols}
+    \end{enumerate}
+    
+    \item Let $R$ be a set of real numbers. \\
+    Statement-1: $A = \cbrak{\brak{x, y} \in R \times R \mid y - x \text{ is an integer}}$ is an equivalence relation on $R$. \\
+    Statement-2: $B = \cbrak{\brak{x, y} \in R \times R \mid x = \alpha y \text{ for some rational number } \alpha }$ is an equivalence relation on $R$.
+
+    \hfill{\brak{2011}}
+    \begin{enumerate}[label=(\alph*)]
+        \item Statement-1 is true, Statement-2 is true; Statement-2 is not a correct explanation of Statement-1
+        \item Statement-1 is true, Statement-2 is false.
+        \item Statement-1 is false, Statement-2 is true.
+        \item Statement-1 is true, Statement-2 is true; Statement-2 is a correct explanation of Statement-1
+    \end{enumerate}
+    
+    \item Consider \\
+    \quad $P$: Suman is brilliant\\
+    \quad $Q$: Suman is rich\\
+    \quad $R$: Suman is honest\\
+    The negation of the statement "Suman is brilliant and dishonest if and only if Suman is rich" can be expressed as
+    
+    \hfill{(2011)}
+    \begin{enumerate}[label=(\alph*)]
+    \item $\sim \brak{Q \leftrightarrow \brak{P \land \sim R}}$
+    \item $\sim Q \leftrightarrow \sim P \land R$
+    \item $\sim \brak{P \land \sim R} \leftrightarrow \sim Q$
+    \item $\sim P \land \brak{Q \leftrightarrow \sim R}$
+    \end{enumerate}
+    
+    \item If the mean deviation about the median of the numbers $a, 2a, \dots, 50a$ is $50$, then $\abs{a}$ equals:
+    
+    \hfill{\brak{2011}}
+    \begin{enumerate}[label=(\alph*)]
+    \begin{multicols}{4}
+        \item $3$
+        \item $4$
+        \item $5$
+        \item $2$
+    \end{multicols}
+    \end{enumerate}
+    
+    \item The negation of the statement\\
+    "If I become a teacher, then I will open a school" is:
+    
+    \hfill{\brak{2012}}
+    \begin{enumerate}[label=(\alph*)]
+        \item I will become a teacher and I will not open a school
+        \item Either I will not become a teacher or I will not open a school
+        \item Neither will I become a teacher nor will I open a school
+        \item I will not become a teacher or I will open a school
+    \end{enumerate}
+    
+    \item Let $x_1, x_2, \dots, x_n$ be $n$ observations, and let $\overline{x}$ be their arithmetic mean and $\sigma^{2}$ be the variance.\\
+    Statement-1: Variance of $2x_1, 2x_2, \dots, 2x_n$ is $4\sigma^{2}$.\\
+    Statement-2: Arithmetic mean of $2x_1, 2x_2, \dots, 2x_n$ is $2\overline{x}$.
+    
+    \hfill{\brak{2012}}
+    \begin{enumerate}[label=(\alph*)]
+        \item Statement-1 is false, Statement-2 is true.
+        \item Statement-1 is true, Statement-2 is true; Statement-2 is a correct explanation of Statement-1
+        \item Statement-1 is true, Statement-2 is true; Statement-2 is \textbf{\textit{not}} a correct explanation of Statement-1
+        \item Statement-1 is true, Statement-2 is false.
+    \end{enumerate}
+    
+    \item Let $X = \cbrak{1, 2, 3, 4, 5}$. The number of different ordered pairs $\brak{Y, Z}$ that can be formed such that $Y \subseteq X$, $Z \subseteq X$, $Y \cap Z$ is empty is:
+    
+    \hfill{\brak{2012}}
+    \begin{enumerate}[label=(\alph*)]
+    \begin{multicols}{4}
+        \item $5^2$
+        \item $3^5$
+        \item $2^5$
+        \item $5^3$
+    \end{multicols}
+    \end{enumerate}
+    
+    \item Let $A$ and $B$ be 2 sets containing 2 elements and 4 elements respectively. The number of subsets of $A \times B$ having 3 or more elements is
+    
+    \hfill{\brak{JEE M 2013}}
+    \begin{enumerate}[label=(\alph*)]
+    \begin{multicols}{4}
+        \item $256$
+        \item $220$
+        \item $219$
+        \item $211$
+    \end{multicols}
+    \end{enumerate}
+    
+    \item Consider \\
+    Statement-1: $(p \land \neg q) \land (\neg p \land q) \text{ is a fallacy.}$\\
+    Statement-2: $(p \rightarrow q) \leftrightarrow (\neg q \rightarrow \neg p) \text{ is a tautology.}$
+    
+    \hfill{\brak{JEE M 2013}}
+    \begin{enumerate}[label=(\alph*)]
+        \item Statement-1 is true, Statement-2 is true; Statement-2 is a correct explanation of Statement-1
+        \item Statement-1 is true, Statement-2 is true; Statement-2 is not a correct explanation of Statement-1
+        \item Statement-1 is true, Statement-2 is false.
+        \item Statement-1 is false, Statement-2 is true.
+    \end{enumerate}
+    
+    \item All the students of a class performed poorly in Mathematics. The teacher decided to give grace marks of 10 to each of the students. Which of the following statistical measures will not change even after the grace marks were given?
+    
+    \hfill{\brak{JEE M 2013}}
+    \begin{enumerate}[label=(\alph*)]
+    \begin{multicols}{2}
+        \item mean
+        \item median
+        \item mode
+        \item variance
+    \end{multicols}
+    \end{enumerate}
+    
+    \item If $X = \cbrak{4^n - 3n - 1 : n \in \mathbb{N}}$ and $Y = \cbrak{9 \brak{n - 1} : n \in \mathbb{N}}$, where $\mathbb{N}$ is the set of natural numbers, then $X \cup Y$ is equal to:
+    
+    \hfill{\brak{JEE M 2014}}
+    \begin{enumerate}[label=(\alph*)]
+    \begin{multicols}{4}
+        \item $X$
+        \item $Y$
+        \item $\mathbb{N}$
+        \item $Y - X$
+    \end{multicols}
+    \end{enumerate}
+    
+    \item The variance of the first 50 natural numbers is
+    
+    \hfill{\brak{JEE M 2014}}
+    \begin{enumerate}[label=(\alph*)]
+    \begin{multicols}{4}
+        \item $437$
+        \item $\frac{437}{4}$
+        \item $\frac{833}{4}$
+        \item $833$
+    \end{multicols}
+    \end{enumerate}
+\end{enumerate}
+\end{document}
+
