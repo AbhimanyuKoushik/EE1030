@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.8.2)  12 AUG 2024 11:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.8.2)  12 AUG 2024 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1296,63 +1296,6 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 5
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-! Missing \right. inserted.
-<inserted text> 
-                \right .
-l.83 ...of all pairs of circles \brak{$S_1$,$S_2$}
-                                                   such that $T$ is tangent ...
-
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.83 ...of all pairs of circles \brak{$S_1$,$S_2$}
-                                                   such that $T$ is tangent ...
-
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.83 ...of all pairs of circles \brak{$S_1$,$S_2$}
-                                                   such that $T$ is tangent ...
-
-? 
-! Extra \right.
-<argument> \left ($S_1$,$S_2$\right )
-                                     
-l.83 ...of all pairs of circles \brak{$S_1$,$S_2$}
-                                                   such that $T$ is tangent ...
-
-? 
-! Missing \right. inserted.
-<inserted text> 
-                \right .
-l.83 ...f $\vec{M}$ as the pair \brak{$S_1$,$S_2$}
-                                                   varies in $F_1$. Let the ...
-
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.83 ...f $\vec{M}$ as the pair \brak{$S_1$,$S_2$}
-                                                   varies in $F_1$. Let the ...
-
-? 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.83 ...f $\vec{M}$ as the pair \brak{$S_1$,$S_2$}
-                                                   varies in $F_1$. Let the ...
-
-? 
-! Extra \right.
-<argument> \left ($S_1$,$S_2$\right )
-                                     
-l.83 ...f $\vec{M}$ as the pair \brak{$S_1$,$S_2$}
-                                                   varies in $F_1$. Let the ...
-
-? 
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -1379,7 +1322,7 @@ t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 57287 bytes).
+Output written on main.pdf (2 pages, 57297 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
