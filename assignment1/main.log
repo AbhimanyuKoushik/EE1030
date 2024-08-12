@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.8.2)  12 AUG 2024 10:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.8.2)  12 AUG 2024 11:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1296,137 +1296,6 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 5
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ... Circle $x^{2} + y^{2} = 1$, where \vec{S}
-                                                   is the point \brak{1,0}. ...
-
-? H
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-? <return>
-Type <return> to proceed, S to scroll future error messages,
-R to run without stopping, Q to run quietly,
-I to insert something, E to edit your file,
-1 or ... or 9 to ignore the next 1 to 9 tokens of input,
-H for help, X to quit.
-? I
-insert>
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ...ec{S} is the point \brak{1,0}. Let \vec{P}
-                                                   be a variable point \brak...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ...rcle and tangents to the circle at \vec{S}
-                                                   and \vec{P} meet at the p...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ...gents to the circle at \vec{S} and \vec{P}
-                                                   meet at the point \vec{Q}...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ...c{S} and \vec{P} meet at the point \vec{Q}
-                                                  . The normal to the circle...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ...ec{Q}. The normal to the circle at \vec{P}
-                                                   intersects a line drawn t...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ...P} intersects a line drawn through \vec{Q}
-                                                   parallel to $RS$ at point...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ... \vec{Q} parallel to $RS$ at point \vec{E}
-                                                  . Then the locus of \vec{E...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.74 ...t point \vec{E}. Then the locus of \vec{E}
-                                                   passes through the point\...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 ... a line passing through the points \vec{P}
-                                                  \brak{-2,7} and \vec{Q}\br...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 ... the points \vec{P}\brak{-2,7} and \vec{Q}
-                                                  \brak{2,-5}. Let $F_1$ be ...
-
-? 
 ! Missing \right. inserted.
 <inserted text> 
                 \right .
@@ -1455,219 +1324,41 @@ l.83 ...of all pairs of circles \brak{$S_1$,$S_2$}
                                                    such that $T$ is tangent ...
 
 ? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 ...ch that $T$ is tangent to $S_1$ at \vec{P}
-                                                   and tangent to $S_2$ at \...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 ...at \vec{P} and tangent to $S_2$ at \vec{Q}
-                                                  , and also such that $S_1$...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 ...$ touch each other at a point, say \vec{M}
-                                                  . Let $E_1$ be the set rep...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 ... the set representing the locus of \vec{M}
-                                                   as the pair \brak{$S_1$,$...
-
-? 
 ! Missing \right. inserted.
 <inserted text> 
                 \right .
-l.83 ... of \vec{M} as the pair \brak{$S_1$,$S_2$}
+l.83 ...f $\vec{M}$ as the pair \brak{$S_1$,$S_2$}
                                                    varies in $F_1$. Let the ...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.83 ... of \vec{M} as the pair \brak{$S_1$,$S_2$}
+l.83 ...f $\vec{M}$ as the pair \brak{$S_1$,$S_2$}
                                                    varies in $F_1$. Let the ...
 
 ? 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.83 ... of \vec{M} as the pair \brak{$S_1$,$S_2$}
+l.83 ...f $\vec{M}$ as the pair \brak{$S_1$,$S_2$}
                                                    varies in $F_1$. Let the ...
 
 ? 
 ! Extra \right.
 <argument> \left ($S_1$,$S_2$\right )
                                      
-l.83 ... of \vec{M} as the pair \brak{$S_1$,$S_2$}
+l.83 ...f $\vec{M}$ as the pair \brak{$S_1$,$S_2$}
                                                    varies in $F_1$. Let the ...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.83 ...E_1$ and passing through the point \vec{R}
-                                                  \brak{1,1} be $F_2$. Then ...
 
 ? 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 \item Let \vec{A}
-                       be the centre of circle $x^2+y^2-2x-4y-20=0$. Suppose...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 ...se that the tangents at the points \vec{B}
-                                                  \brak{1,7} and \vec{D} \br...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 ...t the points \vec{B}\brak{1,7} and \vec{D}
-                                                   \brak{4,-2} on the circle...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.98 ...{4,-2} on the circle meet at point \vec{C}
-                                                  . Find the area of the qua...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.107 \item The abscissa of two points \vec{A}
-                                               and \vec{B} are roots of the ...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.107 ...bscissa of two points \vec{A} and \vec{B}
-                                                   are roots of the equation...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 ...ntersects the $x$ and $y$ axes at \vec{P}
-                                                   and \vec{Q} respectively....
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 ...e $x$ and $y$ axes at \vec{P} and \vec{Q}
-                                                   respectively. Let another...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 ...L_1$, cut the $x$ and $y$ axes at \vec{R}
-                                                   and \vec{S}, respectively...
-
-? 
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 ...e $x$ and $y$ axes at \vec{R} and \vec{S}
-                                                  , respectively. Show that ...
-
-? 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 ...touches the line $y=x$ at a point \vec{P}
-                                                   such that $OP=4\sqrt{2}$ ...
-
-? 
-[2
+] [2
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1676,7 +1367,7 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  30490 strings out of 476091
  599758 string characters out of 5794082
- 1887330 words of memory out of 5000000
+ 1888330 words of memory out of 5000000
  50178 multiletter control sequences out of 15000+600000
  571150 words of font info for 148 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1688,7 +1379,7 @@ t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
 onts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 53685 bytes).
+Output written on main.pdf (2 pages, 57287 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  76 compressed objects within 1 object stream
