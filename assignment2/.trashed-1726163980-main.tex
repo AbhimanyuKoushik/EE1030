@@ -1,4 +1,3 @@
-%iffalse
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
@@ -14,8 +13,7 @@
 \usepackage{comment}
 \usepackage[breaklinks=true]{hyperref}
 \usepackage{tkz-euclide} 
-\usepackage{gvv} 
-%\def\inputGnumericTable{} 
+\usepackage{gvv}                                        
 \usepackage[latin1]{inputenc}     
 \usepackage{xparse}
 \usepackage{array}                                            
@@ -40,8 +38,6 @@
 \newcommand{\define}{\stackrel{\triangle}{=}}
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
-
-%Marks the beginning of the document
 \begin{document}
 \title{Assignment 2}
 \author{EE24Btech11024 - G. Abhimanyu Koushik}
@@ -63,7 +59,7 @@
     \end{multicols}
     \end{enumerate}
     
-    \item Let $S$ be a non-empty subset of $\mathbb{R}$. Consider the following statement:\newline
+    \item Let $S$ be a non-empty subset of $R$. Consider the following statement:\newline
     $P$: There is a rational number $x \in S$ such that $x>0$.\newline
     Which of the following is the negation of statement $P$?
     
@@ -76,12 +72,8 @@
     \end{enumerate}
     
     \item Consider the following relations: \newline
-    \begin{align*}
-    R = \cbrak{\brak{x, y} \mid x,y \text{ are real numbers and } x = wq \text{ for some rational number } w}; 
-    \end{align*}
-    \begin{align*}
-    S = \cbrak{\brak{\frac{m}{n}, \frac{p}{q}} \mid m, n, p, q \text{ are integers such that } n \neq 0, q \neq 0 \text{ and } qm = pn}
-    \end{align*}
+    $R = \cbrak{\brak{x, y} \mid x,y \text{ are real numbers and } x = wq \text{ for some rational number } w};$ \newline
+    $S = \cbrak{\brak{\frac{m}{n}, \frac{p}{q}} \mid m, n, p, q \text{ are integers such that } n \neq 0, q \neq 0 \text{ and } qm = pn}$
     
     \hfill{\brak{2010}}
     \begin{enumerate}
@@ -103,9 +95,9 @@
     \end{multicols}
     \end{enumerate}
     
-    \item Let $\mathbb{R}$ be a set of real numbers. \newline
-    Statement-1: $A$ = \cbrak{\brak{x, y} \in \mathbb{R}  \times \mathbb{R}  \mid y - x \text{ is an integer}} is an equivalence relation on $\mathbb{R}$. \newline
-    Statement-2: $B = \cbrak{\brak{x, y} \in \mathbb{R} \times \mathbb{R}  \mid x = \alpha y \text{ for some rational number } \alpha }$ is an equivalence relation on $\mathbb{R}$.
+    \item Let $R$ be a set of real numbers. \newline
+    Statement-1: $A = \cbrak{\brak{x, y} \in R \times R \mid y - x \text{ is an integer}}$ is an equivalence relation on $R$. \newline
+    Statement-2: $B = \cbrak{\brak{x, y} \in R \times R \mid x = \alpha y \text{ for some rational number } \alpha }$ is an equivalence relation on $R$.
 
     \hfill{\brak{2011}}
     \begin{enumerate}
@@ -160,7 +152,7 @@
     \begin{enumerate}
         \item Statement-1 is false, Statement-2 is true.
         \item Statement-1 is true, Statement-2 is true; Statement-2 is a correct explanation of Statement-1
-        \item Statement-1 is true, Statement-2 is true; Statement-2 is \textbf{not} a correct explanation of Statement-1
+        \item Statement-1 is true, Statement-2 is true; Statement-2 is \textbf{\textit{not}} a correct explanation of Statement-1
         \item Statement-1 is true, Statement-2 is false.
     \end{enumerate}
     
@@ -189,9 +181,9 @@
     \end{enumerate}
     
     \item Consider \newline
- Statement-1: \brak{ p \land \neg q } $\land$ \brak{ \neg p \land q} is a fallacy. \newline
-Statement-2: \brak{p \rightarrow q} $\leftrightarrow$ \brak{ \neg q \rightarrow \neg p} is a tautology.
-
+    Statement-1: $(p \land \neg q) \land (\neg p \land q) \text{ is a fallacy.}$\newline
+    Statement-2: $(p \rightarrow q) \leftrightarrow (\neg q \rightarrow \neg p) \text{ is a tautology.}$
+    
     \hfill{\brak{JEE M 2013}}
     \begin{enumerate}
         \item Statement-1 is true, Statement-2 is true; Statement-2 is a correct explanation of Statement-1
@@ -237,3 +229,4 @@ Statement-2: \brak{p \rightarrow q} $\leftrightarrow$ \brak{ \neg q \rightarrow 
     \end{enumerate}
 \end{enumerate}
 \end{document}
+
