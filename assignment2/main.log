@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.8.2)  15 AUG 2024 04:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2024.8.2)  15 AUG 2024 05:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**maij.tex
+**main.tex
 (./main.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-01-16>
@@ -1389,12 +1389,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--107
  []
 
 
-Overfull \hbox (186.59863pt too wide) detected at line 108
+Overfull \hbox (27.89029pt too wide) detected at line 108
 []
  []
 
 
-Overfull \hbox (274.93217pt too wide) detected at line 111
+Overfull \hbox (116.22383pt too wide) detected at line 111
 []
  []
 
@@ -1432,8 +1432,8 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30663 strings out of 476091
- 602314 string characters out of 5794082
+ 30662 strings out of 476091
+ 602310 string characters out of 5794082
  1889330 words of memory out of 5000000
  50308 multiletter control sequences out of 15000+600000
  569536 words of font info for 145 fonts, out of 8000000 for 9000
@@ -1448,7 +1448,7 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 60031 bytes).
+Output written on main.pdf (2 pages, 60101 bytes).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
  134 compressed objects within 2 object streams
