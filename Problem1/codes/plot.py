@@ -37,9 +37,19 @@ ax = fig.add_subplot(111, projection='3d')
 #Generating all lines
 x_AO = line_gen(A,O)
 
+#Generating Arrow
+ax.quiver(0,0,0,A[0],A[1],A[2],color='b',arrow_length_ratio=0.05)
+
 
 #Plotting all lines
 ax.plot(x_AO[0,:],x_AO[1,:], x_AO[2,:],label='$AO$')
+
+#Setting labeks, legends and titles
+ax.set_xlabel("X")
+ax.set_ylabel("Y")
+ax.set_zlabel("Z")
+plt.title("Given vector")
+plt.legend(['vector'])
 
 # Scatter plot
 colors = np.arange(1, 3)  # Example colors
