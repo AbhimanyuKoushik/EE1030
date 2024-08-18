@@ -49,13 +49,13 @@ ax.set_xlabel("X")
 ax.set_ylabel("Y")
 ax.set_zlabel("Z")
 plt.title("Given vector")
-plt.legend(['vector'])
+plt.legend(['vector (2 2 1)'])
 
 # Scatter plot
 colors = np.arange(1, 3)  # Example colors
 tri_coords = np.block([A, O])  # Stack A, B, C vertically
 ax.scatter(tri_coords[0, :], tri_coords[1, :], tri_coords[2, :], c=colors)
-vert_labels = ['A', 'B']
+vert_labels = ['A', 'O']
 
 for i, txt in enumerate(vert_labels):
     # Annotate each point with its label and coordinates
