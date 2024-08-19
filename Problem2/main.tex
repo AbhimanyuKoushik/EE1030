@@ -1,0 +1,102 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{1.1.5.23}
+\author{EE24BTECH11024 - G. Abhimanyu Koushik
+}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+\textbf{Question}:\\
+Show that the points $\vec{A}$\brak{-2\hat{i}+3\hat{j}+5\hat{k}}, $\vec{B}$\brak{\hat{i}+2\hat{j}+3\hat{k}} and $\vec{C}$\brak{7\hat{i}-\hat{k}} are collinear.
+\\
+\textbf{Solution: }
+%\begin{table}[h!]    
+ % \centering
+  %\input{table.tex}
+  %\caption{Variables Used}
+  %\label{tab10.5.3.9.1}
+%\end{table}
+The Collinearity matrix is given by\\
+\begin{align}
+\myvec{
+   \vec{B}-\vec{A} & \vec{C}-\vec{A}
+ }^T = \myvec{
+   3 & -1 & -2
+   \\
+   9 & -3 & -6
+   }\\
+ \myvec{
+   3 & -1 & -2
+   \\
+   9 & -3 & -6
+   }
+ \xleftrightarrow[]{R_2 \leftarrow {R_1-3R_2}}
+ \myvec{
+   3 & -1 & -2
+   \\
+   0 & 0 & 0
+   }
+\end{align}
+Since the rank of the Collinearity matrix is $1$, the points are collinear
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=0.7\linewidth]{figs/fig.pdf}
+   \caption{Line through the given points}
+   \label{stemplot}
+\end{figure}
+\end{document}  
+
+
