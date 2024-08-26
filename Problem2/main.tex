@@ -2,7 +2,7 @@
 \let\negthickspace\undefined
 \documentclass[journal]{IEEEtran}
 \usepackage[a5paper, margin=10mm, onecolumn]{geometry}
-%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
 \usepackage{tfrupee} % Include tfrupee package
 
 \setlength{\headheight}{1cm} % Set the height of the header box
@@ -36,6 +36,7 @@
 \usepackage{hhline}                                           
 \usepackage{ifthen}                                           
 \usepackage{lscape}
+\usepackage{xparse}
 \begin{document}
 
 \bibliographystyle{IEEEtran}
@@ -63,12 +64,12 @@
 Show that the points $\vec{A}$\brak{-2\hat{i}+3\hat{j}+5\hat{k}}, $\vec{B}$\brak{\hat{i}+2\hat{j}+3\hat{k}} and $\vec{C}$\brak{7\hat{i}-\hat{k}} are collinear.
 \\
 \textbf{Solution: }
-%\begin{table}[h!]    
- % \centering
-  %\input{table.tex}
-  %\caption{Variables Used}
-  %\label{tab10.5.3.9.1}
-%\end{table}
+\begin{table}[h!]    
+  \centering
+  \input{tables/table.tex}
+  \caption{Variables Used}
+  \label{tab10.5.3.9.1}
+\end{table}
 The Collinearity matrix is given by\\
 \begin{align}
 \myvec{
@@ -88,7 +89,7 @@ The Collinearity matrix is given by\\
 Since the rank of the Collinearity matrix is $1$, the points are collinear
 \begin{figure}[h!]
    \centering
-   \includegraphics[width=0.7\linewidth]{figs/fig.pdf}
+   \includegraphics[width=0.7\linewidth]{figs/fig.png}
    \caption{Line through the given points}
    \label{stemplot}
 \end{figure}
