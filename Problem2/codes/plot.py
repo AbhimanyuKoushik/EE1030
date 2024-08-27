@@ -7,10 +7,6 @@ def read_points_from_file(filename):
     points = []
     with open(filename, 'r') as file:
         for line in file:
-            # Skip the lines that contain descriptive text
-            if 'Points between' in line:
-                continue
-            # Extract points from lines containing coordinates
             if line.startswith('('):
                 # Parse the line to extract the x, y, z coordinates
                 point = tuple(map(float, line.strip('()\n').split(', ')))

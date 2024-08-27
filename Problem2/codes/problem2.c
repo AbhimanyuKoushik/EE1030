@@ -9,7 +9,6 @@ typedef struct {
 
 // Function to generate points between two given points and write them to a file
 void generatePoints(Point3D p1, Point3D p2, int numPoints, FILE *file) {
-    fprintf(file, "Points between (%.2f, %.2f, %.2f) and (%.2f, %.2f, %.2f):\n", p1.x, p1.y, p1.z, p2.x, p2.y, p2.z);
     for (int i = 0; i <= numPoints; i++) {
         float t = (float)i / numPoints;
         Point3D p;
@@ -18,7 +17,6 @@ void generatePoints(Point3D p1, Point3D p2, int numPoints, FILE *file) {
         p.z = (1 - t) * p1.z + t * p2.z;
         fprintf(file, "(%.2f, %.2f, %.2f)\n", p.x, p.y, p.z);
     }
-    fprintf(file, "\n");
 }
 
 int main() {
