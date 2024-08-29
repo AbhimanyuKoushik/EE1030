@@ -1,49 +1,36 @@
 #include <stdio.h>
 
-// Structure to represent a point in 3D space
 typedef struct {
     float x;
     float y;
     float z;
 } Point3D;
 
-// Function to generate points between two given points and write them to a file
-void generatePoints(Point3D p1, Point3D p2, int numPoints, FILE *file) {
-    for (int i = 0; i <= numPoints; i++) {
-        float t = (float)i / numPoints;
-        Point3D p;
-        p.x = (1 - t) * p1.x + t * p2.x;
-        p.y = (1 - t) * p1.y + t * p2.y;
-        p.z = (1 - t) * p1.z + t * p2.z;
-        fprintf(file, "(%.2f, %.2f, %.2f)\n", p.x, p.y, p.z);
-    }
-}
-
 int main() {
-    // Define the points
-    Point3D p1 = {-2, 3, 5};
-    Point3D p2 = {1, 2, 3};
-    Point3D p3 = {7, 0, -1};
+    Point3D P1 = {1.0, 2.0, 3.0}; // Example point 1
+    Point3D P2 = {7, 0, -1}; // Example point 2
+    int numPoints = 10; // Number of points to generate
 
-    // Number of intermediate points to generate
-    int numPoints = 10;
-
-    // Open a file to save the points
-    FILE *file = fopen("data_points.txt", "w");
+    FILE *file = fopen("data_points.txt", "w"); // Open file for writing
     if (file == NULL) {
         printf("Error opening file!\n");
         return 1;
     }
 
-    // Generate points between each pair of points and write to the file
-    generatePoints(p1, p2, numPoints, file);
-    generatePoints(p2, p3, numPoints, file);
-    generatePoints(p3, p1, numPoints, file);
+    float t;
+    Point3D point;
 
-    // Close the file
-    fclose(file);
+    for (int i = 0; i <= numPoints; i++) {
+        t = (float)i / numPoints;
+        point.x = P1.x + t * (P2.x - P1.x);
+        point.y = P1.y + t * (P2.y - P1.y);
+        point.z = P1.z + t * (P2.z - P1.z);
 
-    printf("Data points saved to data_points.txt\n");
+        fprintf(file, "(%.2f, %.2f, %.2f)\n",point.x, point.y, point.z);
+    }
+
+    fclose(file); // Close the file
+    printf("Points have been saved to points.txt\n");
 
     return 0;
 }
