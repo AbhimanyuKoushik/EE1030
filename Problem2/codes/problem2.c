@@ -1,37 +1,37 @@
 #include <stdio.h>
 
-typedef struct {
-    float x;
-    float y;
-    float z;
-} Point3D;
+void generate_points_on_line(int n, const char *filename) {
+    // Define the coordinates of the two points
+    double x1 = 1.0, y1 = 2.0, z1 = 3.0;
+    double x2 = 7.0, y2 = 0.0, z2 = -1.0;
 
-int main() {
-    Point3D P1 = {1.0, 2.0, 3.0}; // Example point 1
-    Point3D P2 = {7, 0, -1}; // Example point 2
-    int numPoints = 10; // Number of points to generate
-
-    FILE *file = fopen("data_points.txt", "w"); // Open file for writing
+    // Open the file for writing
+    FILE *file = fopen(filename, "w");
     if (file == NULL) {
         printf("Error opening file!\n");
-        return 1;
+        return;
     }
 
-    float t;
-    Point3D point;
-
-    for (int i = 0; i <= numPoints; i++) {
-        t = (float)i / numPoints;
-        point.x = P1.x + t * (P2.x - P1.x);
-        point.y = P1.y + t * (P2.y - P1.y);
-        point.z = P1.z + t * (P2.z - P1.z);
-
-        fprintf(file, "(%.2f, %.2f, %.2f)\n",point.x, point.y, point.z);
+    // Generate points on the line
+    for (int i = 0; i <= n; i++) {
+        double t = (double)i / n;
+        double x = x1 + t * (x2 - x1);
+        double y = y1 + t * (y2 - y1);
+        double z = z1 + t * (z2 - z1);
+        
+        // Write the point to the file
+        fprintf(file, "%.2f, %.2f, %.2f\n", x, y, z);
     }
 
-    fclose(file); // Close the file
-    printf("Points have been saved to points.txt\n");
+    // Close the file
+    fclose(file);
+    printf("Points have been saved to %s\n", filename);
+}
 
+int main() {
+    int n = 10; // Number of points to generate
+    const char *filename = "points.txt";
+    generate_points_on_line(n, filename);
     return 0;
 }
 
