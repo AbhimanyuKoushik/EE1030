@@ -57,8 +57,10 @@ int main() {
             double sideBC = Matnorm(s_bc,m); 
             double sideCA = Matnorm(s_ca,m);
     double perimeter=sideAB+sideBC+sideCA;
-    printf("%lf\n",perimeter);
-
+    FILE *fptr;
+    fptr = fopen("triangle_points.txt", "a");
+    fprintf(fptr,"perimeter of triangle is %lf\n",perimeter);
+    fclose(fptr);
     return 0;
 }
 

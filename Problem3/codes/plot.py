@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the points from the text file
-points = np.loadtxt("triangle_points.txt", delimiter=',')
+points = np.loadtxt("triangle_points.txt", delimiter=',',max_rows=len(list(open("./triangle_points.txt")))-1)
 
 # Extract the x and y coordinates
 x = points[:, 0]
