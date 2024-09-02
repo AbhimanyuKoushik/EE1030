@@ -10,7 +10,7 @@ y = points[:, 1]
 
 # Plot the triangle
 plt.figure()
-plt.plot(x, y, 'bo-', label='Triangle Edges')
+plt.plot(x, y, label='Triangle Edges')
 plt.fill(x, y, 'lightblue', alpha=0.5)  # Fill the triangle with a light blue color
 plt.xlabel("x")
 plt.ylabel("y")
