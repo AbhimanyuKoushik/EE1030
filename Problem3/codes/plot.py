@@ -1,8 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 # Load the points from the text file
-points = np.loadtxt("triangle_points.txt", delimiter=',',max_rows=len(list(open("./triangle_points.txt")))-1)
+points = np.loadtxt("triangle_points.txt", delimiter=',', max_rows=len(list(open("./triangle_points.txt")))-1)
 
 # Extract the x and y coordinates
 x = points[:, 0]
@@ -22,5 +23,6 @@ plt.ylabel("y")
 plt.title("Triangle formed by (0,4), (0,0), (3,0)")
 plt.grid(True)
 plt.legend()
-plt.show()
 
+# Save the plot to figs directory
+plt.savefig('../figs/fig.png')
