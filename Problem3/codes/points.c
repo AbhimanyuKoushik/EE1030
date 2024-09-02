@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include "matfun.h"
+#include <math.h>
 
-void point_gen(float x1, float y1, float x2, float y2, int num_points) {
-    float x, y;
+void point_gen(float **A, float **B, int num_points) {
     FILE *fptr;
     fptr = fopen("triangle_points.txt", "a");
 
@@ -10,10 +11,9 @@ void point_gen(float x1, float y1, float x2, float y2, int num_points) {
         return;
     }
 
-    for (int i = 0; i <= num_points; i++) {
-        x = x1 + (x2 - x1) * i / num_points;
-        y = y1 + (y2 - y1) * i / num_points;
-        fprintf(fptr, "%f %f\n", x, y);
+    for (int i = 1; i < num_points; i++) {
+    	double **output=Matsec(A,B,2,(float) i/num_points;
+        fprintf(fptr, "%f %f\n", output[0], output[1]);
     }
 
     fclose(fptr);
@@ -21,12 +21,10 @@ void point_gen(float x1, float y1, float x2, float y2, int num_points) {
 }
 
 int main() {
-    float x1,y1,x2,y2,x3,y3;
-    x1=0;y1=4;
-    x2=0;y2=0;
-    x3=3;y3=0;
-    point_gen(x1, y1, x2, y2, 20);
-    point_gen(x2, y2, x3, y3, 20);
-    point_gen(x3, y3, x1, y1, 20);
+    float A[2],B[2],C[2];
+    A=[0,4];B=[3,0];C=[0,0];
+    point_gen(A,B,20);
+    point_gen(B,C,20);
+    point_gen(C,A,20);
     return 0;
 }
