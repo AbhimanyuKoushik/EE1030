@@ -24,7 +24,6 @@ void point_gen(double **A, double **B, int num_points) {
     }
 
     fclose(fptr);
-    printf("Points saved to triangle_points.txt\n");
 }
 
 int main() {
@@ -49,6 +48,16 @@ int main() {
     point_gen(A, B, 20);
     point_gen(B, C, 20);
     point_gen(C, A, 20);
+
+    	    double **s_ab = Matsub(A,B,m,n);
+	    double **s_bc = Matsub(B,C,m,n);
+            double **s_ca = Matsub(C,A,m,n);
+            double **a_ba = Matsub(B,A,m,n);
+            double sideAB = Matnorm(s_ab,m);
+            double sideBC = Matnorm(s_bc,m); 
+            double sideCA = Matnorm(s_ca,m);
+    double perimeter=sideAB+sideBC+sideCA;
+    printf("%lf\n",perimeter);
 
     return 0;
 }
