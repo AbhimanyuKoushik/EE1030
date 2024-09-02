@@ -1,40 +1,32 @@
 #include <stdio.h>
 
-int main() {
+void point_gen(float x1, float y1, float x2, float y2, int num_points) {
+    float x, y;
     FILE *fptr;
-    fptr = fopen("triangle_points.txt", "w");
+    fptr = fopen("triangle_points.txt", "a");
 
     if (fptr == NULL) {
         printf("Error opening file!\n");
-        return 1;
+        return;
     }
 
-    // Number of points to generate along each edge
-    int num_points = 20;
-
-    // Generate points on the edge from (0, 4) to (0, 0)
     for (int i = 0; i <= num_points; i++) {
-        float x = 0;
-        float y = 4.0f * i / num_points;
-        fprintf(fptr, "%f %f\n", x, y);
-    }
-
-    // Generate points on the edge from (0, 0) to (3, 0)
-    for (int i = 0; i <= num_points; i++) {
-        float x = 3.0f * i / num_points;
-        float y = 0;
-        fprintf(fptr, "%f %f\n", x, y);
-    }
-
-    // Generate points on the edge from (3, 0) to (0, 4)
-    for (int i = 0; i <= num_points; i++) {
-        float x = 3.0f - 3.0f * i / num_points;
-        float y = 4.0f * i / num_points;
+        x = x1 + (x2 - x1) * i / num_points;
+        y = y1 + (y2 - y1) * i / num_points;
         fprintf(fptr, "%f %f\n", x, y);
     }
 
     fclose(fptr);
     printf("Points saved to triangle_points.txt\n");
-    return 0;
 }
 
+int main() {
+    float x1,y1,x2,y2,x3,y3;
+    x1=0;y1=4;
+    x2=0;y2=0;
+    x3=3;y3=0;
+    point_gen(x1, y1, x2, y2, 20);
+    point_gen(x2, y2, x3, y3, 20);
+    point_gen(x3, y3, x1, y1, 20);
+    return 0;
+}
