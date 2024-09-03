@@ -12,6 +12,7 @@ void point_gen(FILE *fptr, double **A, double **B, int num_points) {
     for (int i = 0; i <= num_points; i++) {
         double **output = Matsec(A, B, 2, (double) i / num_points);
         fprintf(fptr, "%lf,%lf\n", output[0][0], output[1][0]);
+        freeMat(output,2);
     }
 }
 
@@ -35,7 +36,7 @@ int main() {
     C[1][0] = y3;
 
     FILE *fptr;
-    fptr = fopen("triangle_points.txt", "a");
+    fptr = fopen("triangle_points.txt", "w");
     if (fptr == NULL) {
         printf("Error opening file!\n");
         return 1;
@@ -53,9 +54,19 @@ int main() {
     double sideBC = Matnorm(s_bc, m);
     double sideCA = Matnorm(s_ca, m);
     double perimeter = sideAB + sideBC + sideCA;
+    
+     // Free all allocated memory
+    freeMat(A,m);
+    freeMat(B,m);
+    freeMat(C,m);
+    freeMat(s_ab,m);
+    freeMat(s_bc,m);
+    freeMat(s_ca,m);
+    freeMat(a_ba,m);
 
     fprintf(fptr, "Perimeter of the triangle is %lf\n", perimeter);
     fclose(fptr);
     return 0;
+    
 }
 
