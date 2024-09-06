@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the points from the text file
-points = np.loadtxt("perp_bisect.txt", delimiter=',',max_rows=len(list(open("./perp_bisect.txt")))-1)
+points = np.loadtxt("perp_bisect.dat", delimiter=',',max_rows=len(list(open("./perp_bisect.dat")))-1)
 
 # Extract the x and y coordinates
 x = points[:, 0]

@@ -42,7 +42,7 @@ int main(){
 
     // Open file to write points
     FILE *fptr;
-    fptr = fopen("perp_bisect.txt", "a");
+    fptr = fopen("perp_bisect.dat", "a");
     if (fptr == NULL) {
         printf("Error opening file!\n");
         return 1;
