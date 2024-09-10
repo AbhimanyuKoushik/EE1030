@@ -8,11 +8,11 @@
 #include "libs/matfun.h"
 #include "libs/geofun.h"
 
-void point_gen(FILE *fptr, double **A, double **B, int num_points) {
+void point_gen(FILE *fptr, double **A, double **B, int no_rows, int no_cols, int num_points) {
     for (int i = 0; i <= num_points; i++) {
-        double **output = Matsec(A, B, 2, (double) i / num_points);
+        double **output = Matadd(A, Matscale(Matsub(B,A,no_rows,no_cols),no_rows,no_cols,i/num_points), no_rows, no_cols);
         fprintf(fptr, "%lf,%lf\n", output[0][0], output[1][0]);
-        freeMat(output,2);
+        freeMat(output,no_rows);
     }
 }
 
@@ -37,7 +37,14 @@ int main() {
         return 1;
     }
 
-    point_gen(fptr, A, B, 20);
+    point_gen(fptr, A, B, m, n, 20);
+    
+    double dist=fabs(Matnorm(Matsub(B, A, m, n), m));
+    
+    // Compare the distance with 2 * sqrt(10) using a tolerance
+    if (fabs(dist - 2 * sqrt(10)) < 1e-6) {
+        fprintf(fptr,"The distance between the points is %lf\n", dist);
+    }
     
      // Free all allocated memory
     freeMat(A,m);
