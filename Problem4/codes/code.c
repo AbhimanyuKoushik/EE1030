@@ -11,7 +11,7 @@
 
 void point_gen(FILE *fptr, double **A, double **direction_vector, int no_rows, int no_col, int num_points) {
     double **output;
-    for (int i = -num_points/2; i <= num_points/2; i++) {
+    for (double i = -num_points/2; i <= num_points/2; i++) {
         output = Matadd(A, Matscale(direction_vector,no_rows,no_col,(double) i/num_points), no_rows, no_col);
         fprintf(fptr, "%lf,%lf\n", output[0][0], output[1][0]);
         freeMat(output, no_rows);
@@ -42,7 +42,7 @@ int main(){
 
     // Open file to write points
     FILE *fptr;
-    fptr = fopen("perp_bisect.dat", "a");
+    fptr = fopen("perp_bisect.dat", "w");
     if (fptr == NULL) {
         printf("Error opening file!\n");
         return 1;
@@ -57,7 +57,7 @@ int main(){
     reqpoint[1][0]=9;
     
     if(Matnorm(Matsub(A,reqpoint,m,n),m)==Matnorm(Matsub(B,reqpoint,m,n),m)){
-    	fprintf(fptr,"Point is equidistant from the given points");
+    	fprintf(fptr,"Point is equidistant from the given points\n");
     }
 	
     // Close the file

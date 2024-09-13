@@ -12,7 +12,7 @@
 void point_gen(FILE *fptr, double **center, double **point_on_circle, int no_rows, int no_col, int num_points) {
     double **output;
     double **dir_vector = Matsub(point_on_circle, center, no_rows, no_col);
-    for (int i = 0; i <= num_points; i++) {
+    for (double i = 0; i <= num_points; i++) {
         output = Matadd(Matmul(rotMat((i * 2 * M_PI) / num_points), dir_vector, 2, 2, 1), center, no_rows, no_col);
         fprintf(fptr, "%lf,%lf\n", output[0][0], output[1][0]);
         freeMat(output, no_rows);

@@ -26,3 +26,4 @@ plt.legend()
 
 # Save the plot to figs directory
 plt.savefig('../figs/fig.png')
+plt.show()

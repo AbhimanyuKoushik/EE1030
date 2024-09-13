@@ -9,7 +9,7 @@
 #include "libs/geofun.h"
 
 void point_gen(FILE *fptr, double **A, double **B, int num_points) {
-    for (int i = 0; i <= num_points; i++) {
+    for (double i = 0; i <= num_points; i++) {
         double **output = Matsec(A, B, 2, (double) i / num_points);
         fprintf(fptr, "%lf,%lf\n", output[0][0], output[1][0]);
         freeMat(output,2);
