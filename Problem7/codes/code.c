@@ -23,12 +23,12 @@ int main() {
     
     x = 1; y = 1; z = 1;
     
-    double **X = createMat(m,n);
-    X[0][0] = x;
-    X[1][0] = y;
-    X[2][0] = z;
-    double c1 = (2*sqrt(3))/(Matnorm(X,m));
-    double c2 = -(2*sqrt(3))/(Matnorm(X,m));
+    double **R = createMat(m,n);
+    R[0][0] = x;
+    R[1][0] = y;
+    R[2][0] = z;
+    double c1 = (2*sqrt(3))/(Matnorm(R,m));
+    double c2 = -(2*sqrt(3))/(Matnorm(R,m));
     
     x1 = 0; y1 = 0; z1 = 0;
     x2 = c1*x; y2 = c1*y; z2 = c1*z;
@@ -63,7 +63,7 @@ int main() {
     freeMat(A,m);
     freeMat(B,m);
     freeMat(C,m);
-    freeMat(X,m);
+    freeMat(R,m);
     
     fprintf(fptr, "The length of vector is %lf", length);
     fclose(fptr);
