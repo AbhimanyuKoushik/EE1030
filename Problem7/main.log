@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.6)  14 SEP 2024 01:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.6)  14 SEP 2024 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1904,16 +1904,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ] [2 <./figs/fig.png>]
 (./main.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
  49759 strings out of 478287
  1164159 string characters out of 5849290
- 1634904 words of memory out of 5000000
+ 1634906 words of memory out of 5000000
  67133 multiletter control sequences out of 15000+600000
  533097 words of font info for 159 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
