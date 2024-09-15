@@ -1,0 +1,85 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{1.11.6}
+\author{EE24BTECH11024 - G. Abhimanyu Koushik
+}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+\textbf{Question:}\\
+Find the direction cosines of a line which makes equal angles with the coordinate axes
+\\
+\textbf{Solution:}
+\begin{table}[h!]    
+  \centering
+  \input{tables/table.tex}
+  \caption{Variables Used}
+  \label{tab10.5.3.9.1}
+\end{table}\\
+Let
+\begin{align}
+	\vec{A} &= \myvec{1\\1\\1}\\
+	\norm{\vec{A}} &= \sqrt{\vec{A}^\top\vec{A}}\\
+		     &= \sqrt{\myvec{1 & 1 & 1}\myvec{1\\1\\1}}\\
+	\implies \norm{\vec{A}} &= \sqrt{3}
+\end{align}
+The unit direction vector of the line is
+\begin{align}
+	\frac{\vec{A}}{\norm{\vec{A}}} &= \frac{\myvec{1\\1\\1}}{\sqrt{3}} = \myvec{\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}}\\
+	\vec{B} &= \myvec{\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}\\\frac{1}{\sqrt{3}}}
+\end{align}
+Hence, the direction cosines of the line are $\frac{1}{\sqrt{3}}$, $\frac{1}{\sqrt{3}}$ and $\frac{1}{\sqrt{3}}$.
+
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=0.7\linewidth]{figs/fig.png}
+   \caption{Line with equal direction ratios, where $\vec{B}$ is unit direction vector}
+\end{figure}
+
+\end{document}
