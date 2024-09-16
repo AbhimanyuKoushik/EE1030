@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 # Load the points directly from the file (assuming the file has x,y,z format)
-points = np.loadtxt('vector.dat', delimiter=',')
+points = np.loadtxt('vector.dat', delimiter=',', max_rows=len(list(open("./vector.dat")))-3)
 
 # Separate the points into X, Y, Z components
 x_points = points[:, 0]

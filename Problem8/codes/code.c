@@ -15,6 +15,9 @@ void point_gen(FILE *fptr, double **A, double **B, int no_rows, int no_cols, int
         freeMat(output,no_rows);
     }
 }
+void angle_find(FILE *fptr, double **A, double **B){
+    fprintf(fptr,"The angle between vector [%lf,%lf,%lf]^T and [%lf,%lf,%lf]^T is %lf degrees\n",A[0][0],A[1][0],A[2][0],B[0][0],B[1][0],B[2][0],(180/M_PI)*acos(Matdot(A, B, 3)));
+}
 
 int main() {
     double x, y, z, x1, y1, z1;
@@ -28,6 +31,9 @@ int main() {
     // creating matrices A,B,O
     double **A = createMat(m, n);
     double **B = createMat(m, n);
+    double **unitx = createMat(m,n);
+    double **unity = createMat(m,n);
+    double **unitz = createMat(m,n);
     double **O = createMat(m, n);
     
     // giving their coordinates
@@ -35,9 +41,21 @@ int main() {
     A[1][0] = y;
     A[2][0] = z;
     
-    O[0][0]=x1;
-    O[1][0]=y1;
-    O[2][0]=z1;
+    O[0][0] = x1;
+    O[1][0] = y1;
+    O[2][0] = z1;
+    
+    unitx[0][0] = 1;
+    unitx[1][0] = 0;
+    unitx[2][0] = 0;
+    
+    unity[0][0] = 0;
+    unity[1][0] = 1;
+    unity[2][0] = 0;
+    
+    unitz[0][0] = 0;
+    unitz[1][0] = 0;
+    unitz[2][0] = 1;
     
     // dividing vector A with its norm to make it unit vector
     B = Matscale(A,m,n,1/Matnorm(A,m));
@@ -52,11 +70,17 @@ int main() {
     
     // generating points 
     point_gen(fptr, O, B, 3, 1, 20);
+    angle_find(fptr, B, unitx);
+    angle_find(fptr, B, unity);
+    angle_find(fptr, B, unitz);
     
     // free matrices
     freeMat(A,m);
     freeMat(B,m);
     freeMat(O,m);
+    freeMat(unitx,m);
+    freeMat(unity,m);
+    freeMat(unitz,m);
     
     // closing the file
     fclose(fptr);
