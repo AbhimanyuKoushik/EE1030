@@ -27,4 +27,5 @@ def plot_triangle(filename, file_no):
 plot_triangle('triangle1.dat', 1)
 plot_triangle('triangle2.dat', 2)
 plot_triangle('triangle3.dat', 3)
+plot_triangle('triangle4.dat', 4)
 

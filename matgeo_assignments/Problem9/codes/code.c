@@ -62,7 +62,7 @@ void twoDtriangle_gen(double sideAB, double sideBC, double sideCA, char filename
 }
 
 int main() {
-    double sideAB, sideBC, var1_sideCA, var2_sideCA, var3_sideCA;
+    double sideAB, sideBC, var1_sideCA, var2_sideCA, var3_sideCA, var4_sideCA;
     
     // Input the sides of the triangle
     sideAB = 5;
@@ -70,11 +70,13 @@ int main() {
     var1_sideCA = 3.6;
     var2_sideCA = 4.1;
     var3_sideCA = 3.8;
+    var4_sideCA = 3.4;
 
     // Generate triangle points
     twoDtriangle_gen(sideAB, sideBC, var1_sideCA, "triangle1.dat");
     twoDtriangle_gen(sideAB, sideBC, var2_sideCA, "triangle2.dat");
     twoDtriangle_gen(sideAB, sideBC, var3_sideCA, "triangle3.dat");
+    twoDtriangle_gen(sideAB, sideBC, var4_sideCA, "triangle4.dat");
 
     return 0;
 }
