@@ -77,7 +77,7 @@ It results in the following matrix equation
 \begin{align}
   \myvec{1 & 1 & 1\\-1 & \cos(C) & \cos(B)\\0 & \sin(C) & -\sin(B)}\times\myvec{a\\b\\c}&=K\myvec{1\\0\\0}
 \end{align}
-We can find all the side lengths by solving the above matrix equation.
+We can find all the side lengths by solving the above matrix equation where $x=\frac{a}{K}$, $y=\frac{b}{K}$, and $z=\frac{c}{K}$.
 \begin{align}
   \myvec{1 & 1 & 1\\-1 & \frac{1}{\sqrt{2}} & \frac{1}{2}\\0 & \frac{1}{\sqrt{2}} & -\frac{\sqrt{3}}{2}}\times\myvec{x\\y\\z}&=\myvec{1\\0\\0}\\
   \myvec{1 & 1 & 1 & 1\\-1 & \frac{1}{\sqrt{2}} & \frac{1}{2} & 0\\0 & \frac{1}{\sqrt{2}} & -\frac{\sqrt{3}}{2} & 0} \xleftrightarrow[]{R_2 \leftarrow {R_1+R_2}}\myvec{1 & 1 & 1 & 1\\0 & \frac{1}{\sqrt{2}}+1 & \frac{3}{2} & 1\\0 & \frac{1}{\sqrt{2}} & -\frac{\sqrt{3}}{2} & 0}\\
