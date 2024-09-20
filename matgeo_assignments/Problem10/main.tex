@@ -81,32 +81,20 @@ We can find all the side lengths by solving the above matrix equation.
 \begin{align}
   \myvec{1 & 1 & 1\\-1 & \frac{1}{\sqrt{2}} & \frac{1}{2}\\0 & \frac{1}{\sqrt{2}} & -\frac{\sqrt{3}}{2}}\times\myvec{x\\y\\z}&=\myvec{1\\0\\0}\\
   \myvec{1 & 1 & 1 & 1\\-1 & \frac{1}{\sqrt{2}} & \frac{1}{2} & 0\\0 & \frac{1}{\sqrt{2}} & -\frac{\sqrt{3}}{2} & 0} \xleftrightarrow[]{R_2 \leftarrow {R_1+R_2}}\myvec{1 & 1 & 1 & 1\\0 & \frac{1}{\sqrt{2}}+1 & \frac{3}{2} & 1\\0 & \frac{1}{\sqrt{2}} & -\frac{\sqrt{3}}{2} & 0}\\
-  \xleftrightarrow[]{R_3 \leftarrow {R_2-\brak{\sqrt{2}+1}R_3}}\myvec{1 & 1 & 1 & 1\\0 & \frac{1}{\sqrt{2}}+1 & \frac{3}{2} & 1\\0 & 0 & \brak{\sqrt{3}+\sqrt{2}+1}\frac{\sqrt{3}}{2} & 1} 
+  \xleftrightarrow[]{R_3 \leftarrow {R_2-\brak{\sqrt{2}+1}R_3}}\myvec{1 & 1 & 1 & 1\\0 & \frac{1}{\sqrt{2}}+1 & \frac{3}{2} & 1\\0 & 0 & \brak{\sqrt{3}+\sqrt{2}+1}\frac{\sqrt{3}}{2} & 1}\\
+  \xleftrightarrow[]{R_3 \leftarrow {\brak{\frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}R_3}}\myvec{1 & 1 & 1 & 1\\0 & \frac{1}{\sqrt{2}}+1 & \frac{3}{2} & 1\\0 & 0 & 1 & \frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}\\
+  \xleftrightarrow[]{R_2 \leftarrow {R_2-\brak{\frac{3}{2}}R_3}}\myvec{1 & 1 & 1 & 1\\0 & \frac{1}{\sqrt{2}}+1 & 0 & \frac{\sqrt{2}+1}{\sqrt{3}+\sqrt{2}+1}\\0 & 0 & 1 & \frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}\\
+  \xleftrightarrow[]{R_2 \leftarrow \brak{\frac{\sqrt{2}}{\sqrt{2}+1}}R_2}\myvec{1 & 1 & 1 & 1\\0 & 1 & 0 & \frac{\sqrt{2}}{\sqrt{3}+\sqrt{2}+1}\\0 & 0 & 1 & \frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}\\
+  \xleftrightarrow[]{R_1 \leftarrow R_1-R_2}\myvec{1 & 0 & 1 & \frac{\sqrt{3}+1}{\sqrt{3}+\sqrt{2}+1}\\0 & 1 & 0 & \frac{\sqrt{2}}{\sqrt{3}+\sqrt{2}+1}\\0 & 0 & 1 & \frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}\\
+  \xleftrightarrow[]{R_1 \leftarrow R_1-R_3}\myvec{1 & 0 & 0 & \frac{1+\sqrt{3}}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}\\0 & 1 & 0 & \frac{\sqrt{2}}{\sqrt{3}+\sqrt{2}+1}\\0 & 0 & 1 & \frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}\\
 \end{align}
-By using Back-Substitution we get The values of $x$,$y$,$z$
+The values of $x$,$y$,$z$ are
 \begin{align}
-z=\frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}
+z&=\frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}\\
+y&=\frac{\sqrt{2}}{\sqrt{3}+\sqrt{2}+1}\\
+x&=\frac{1+\sqrt{3}}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}\\
 \end{align}
-Value of $y$
-\begin{align}
-\brak{\frac{1}{\sqrt{2}}+1}y+\brak{\frac{3}{2}}z&=1\\
-\brak{\frac{1}{\sqrt{2}}+1}y+\brak{\frac{3}{2}}\brak{\frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}&=1\\
-\brak{\frac{1}{\sqrt{2}}+1}y&=1-\brak{\frac{3}{2}}\brak{\frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}\\
-\brak{\frac{1+\sqrt{2}}{\sqrt{2}}}y&=1-\brak{\frac{\sqrt{3}}{\sqrt{3}+\sqrt{2}+1}}\\
-\brak{\frac{1+\sqrt{2}}{\sqrt{2}}}y&=\frac{\sqrt{2}+1}{\sqrt{3}+\sqrt{2}+1}\\
-\brak{\frac{1}{}\sqrt{2}}y&=\frac{1}{\sqrt{3}+\sqrt{2}+1}\\
-y&=\frac{\sqrt{2}}{\sqrt{3}+\sqrt{2}+1}
-\end{align}
-Value of $x$
-\begin{align}
-x+y+z&=1\\
-x+\frac{\sqrt{2}}{\sqrt{3}+\sqrt{2}+1}+\frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}&=1\\
-x+\frac{\sqrt{6}}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}+\frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}&=1\\
-1-\frac{2+\sqrt{6}}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}&=x\\
-\frac{3+\sqrt{6}+\sqrt{3}-2-\sqrt{6}}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}&=x\\
-\frac{1+\sqrt{3}}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}&=x
-\end{align}
-From these we get the value of $\frac{a}{K}$, $\frac{b}{K}$ and $\frac{c}{K}$
+The values of $\frac{a}{K}$,$\frac{b}{K}$ and $\frac{c}{K}$ are
 \begin{align}
 \frac{a}{K}&=\frac{1+\sqrt{3}}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}\\
 \frac{b}{K}&=\frac{\sqrt{2}}{\brak{\sqrt{3}+\sqrt{2}+1}}\\
@@ -123,5 +111,4 @@ c&=\frac{24}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}
    \includegraphics[width=0.7\linewidth]{figs/fig.png}
    \caption{Triangle with $\angle B=60\degree$, $\angle C=45\degree$ and Perimeter = $12cm$}
 \end{figure}
-
 \end{document}
