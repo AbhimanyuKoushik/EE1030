@@ -80,6 +80,9 @@ It results in the following matrix equation
 We can find all the side lengths by solving the above matrix equation where $x=\frac{a}{K}$, $y=\frac{b}{K}$, and $z=\frac{c}{K}$.
 \begin{align}
   \myvec{1 & 1 & 1\\-1 & \frac{1}{\sqrt{2}} & \frac{1}{2}\\0 & \frac{1}{\sqrt{2}} & -\frac{\sqrt{3}}{2}}\times\myvec{x\\y\\z}&=\myvec{1\\0\\0}\\
+\end{align}
+The augmented matrix for this will be
+\begin{align}
   \myvec{1 & 1 & 1 & 1\\-1 & \frac{1}{\sqrt{2}} & \frac{1}{2} & 0\\0 & \frac{1}{\sqrt{2}} & -\frac{\sqrt{3}}{2} & 0} \xleftrightarrow[]{R_2 \leftarrow {R_1+R_2}}\myvec{1 & 1 & 1 & 1\\0 & \frac{1}{\sqrt{2}}+1 & \frac{3}{2} & 1\\0 & \frac{1}{\sqrt{2}} & -\frac{\sqrt{3}}{2} & 0}\\
   \xleftrightarrow[]{R_3 \leftarrow {R_2-\brak{\sqrt{2}+1}R_3}}\myvec{1 & 1 & 1 & 1\\0 & \frac{1}{\sqrt{2}}+1 & \frac{3}{2} & 1\\0 & 0 & \brak{\sqrt{3}+\sqrt{2}+1}\frac{\sqrt{3}}{2} & 1}\\
   \xleftrightarrow[]{R_3 \leftarrow {\brak{\frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}R_3}}\myvec{1 & 1 & 1 & 1\\0 & \frac{1}{\sqrt{2}}+1 & \frac{3}{2} & 1\\0 & 0 & 1 & \frac{2}{\sqrt{3}\brak{\sqrt{3}+\sqrt{2}+1}}}\\
