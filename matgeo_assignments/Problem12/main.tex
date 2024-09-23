@@ -1,0 +1,95 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{4.4.2.14}
+\author{EE24BTECH11024 - Abhimanyu Koushik}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+Question:\\
+Find the direction and normal vectors of the given line $x+y=0$
+\begin{table}[h!]    
+  \centering
+  \input{tables/table.tex}
+  \caption{Variables Used}
+  \label{tab1-1.9-6}
+\end{table}\\
+\solution
+The equation of the line is given by,
+\begin{align}
+	y&=mx+c\\
+	y-mx&=c\\
+	\myvec{-m & 1}\myvec{x\\y}&=c\\
+	\vec{n}^\top\vec{x}&=c
+\end{align}
+here, $\vec{n}=\myvec{-m\\1}$ where $\vec{n}$ is vector perpendicular to line\\
+given line can be written as
+\begin{align}
+x+y&=0\\
+\myvec{1&1}\vec{x}&=0\\
+\vec{n}&=\myvec{1\\1}
+\end{align}
+equation of line in terms of direction vector $\vec{m}$ is,
+\begin{align}
+x&=x\\
+y&=mx+c\\
+\vec{x}&=x\myvec{1\\m}+\myvec{0\\c}\\
+\vec{x}&=k\vec{m}+\vec{h}
+\end{align}
+Here
+\begin{align}
+x&=x\\
+y&=-x\\
+\vec{x}&=x\myvec{1\\-1}+\myvec{0\\0}\\
+\vec{x}&=k\myvec{1\\-1}
+\end{align}
+Direction vector: $\vec{m}=\myvec{1\\-1}$\\
+Normal vector: $\vec{n}=\myvec{1\\1}$
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width = 1\linewidth]{figs/fig.png}
+   \caption{Plot of the line, Direction Vector and Normal Vector}
+   \label{stemplot}
+\end{figure}
+\end{document}
