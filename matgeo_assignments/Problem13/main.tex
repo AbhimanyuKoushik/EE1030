@@ -1,0 +1,86 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{4.4.2.7}
+\author{EE24BTECH11024 - Abhimanyu Koushik}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+Question:\\
+Find the direction and normal vectors of the given line $5=2x$
+\begin{table}[h!]    
+  \centering
+  \input{tables/table.tex}
+  \caption{Variables Used}
+  \label{tab1-1.9-6}
+\end{table}\\
+\solution
+The normal vector can be found out as
+\begin{align}
+x+y\brak{0}&=\frac{5}{2}\\
+\myvec{1 & 0}\myvec{x\\y}&=\frac{5}{2}\\
+\myvec{1&0}\vec{x}&=\frac{5}{2}\\
+\vec{n}^\top\vec{x}&=c\\
+\vec{n}&=\myvec{1\\0}
+\end{align}
+The direction vector is perpendicular to normal vector
+\begin{align}
+\vec{n}^\top\vec{m}&=0\\
+\myvec{1 & 0}\vec{m}&=0\\
+\myvec{1 & 0}\myvec{m_1\\m_2}&=0\\
+m_1\brak{1}+m_2\brak{0}=0\\
+m_1=0\\
+\vec{m}=\myvec{0\\m_2}\\
+\vec{m}=m_2\myvec{0\\1}\\
+\vec{m}\equiv\myvec{0\\1}
+\end{align}
+Direction vector: $\vec{m}=\myvec{0\\1}$\\
+Normal vector: $\vec{n}=\myvec{1\\0}$
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width = 1\linewidth]{figs/fig.png}
+   \caption{Plot of the line, Direction Vector and Normal Vector}
+   \label{stemplot}
+\end{figure}
+\end{document}
