@@ -34,7 +34,7 @@ origin = np.array([0, 0])
 plt.figure()
 
 # Plot the line points (blue line)
-plt.plot(x1, y1, label='Line segment', color='blue')
+plt.plot(x1, y1, label='Line segment', color='blue', linestyle='dashed')
 
 # Plot the scaled direction vector (green) from the origin
 plt.quiver(origin[0], origin[1], dirvector_scaled[0], dirvector_scaled[1], angles='xy', scale_units='xy', scale=1, color='green', label='Direction vector')
