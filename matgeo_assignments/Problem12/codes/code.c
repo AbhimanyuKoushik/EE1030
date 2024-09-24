@@ -10,11 +10,19 @@
 
 void point_gen(FILE *fptr, double **A, double **B, int no_rows, int no_cols, int num_points) {
     for (double i = 0; i <= num_points; i++) {
-        double **output = Matadd(A, Matscale(Matsub(B,A,no_rows,no_cols),no_rows,no_cols,(double)i/num_points), no_rows, no_cols);
+        double **output;
+        if (A != NULL && B != NULL) {
+            output = Matadd(A, Matscale(Matsub(B,A,no_rows,no_cols),no_rows,no_cols,(double)i/num_points), no_rows, no_cols);
+        } else if (A == NULL) {
+            output = Matscale(B, no_rows, no_cols, (double)i/num_points);
+        } else if (B == NULL) {
+            output = Matscale(A, no_rows, no_cols, (double)i/num_points);
+        }
         fprintf(fptr, "%lf,%lf\n", output[0][0], output[1][0]);
         freeMat(output,no_rows);
     }
 }
+
 int main() {
     double x1, y1, x2, y2;
     x1 = 2; y1 = -2;
@@ -39,9 +47,14 @@ int main() {
     }
 
     point_gen(fptr, A,B , m, n, 20);
-    fprintf(fptr, "%lf,%lf\n", dirvector[0][0], dirvector[1][0]);
-    fprintf(fptr, "%lf,%lf\n", normvector[0][0], normvector[1][0]);
-	
+    point_gen(fptr, 0, dirvector,m,n,20);
+    point_gen(fptr, 0, normvector,m,n,20);
+    
+    freeMat(A,m);
+    freeMat(B,m);
+    freeMat(dirvector,m);
+    freeMat(normvector,m);
+    
     fclose(fptr);
     return 0;
 }

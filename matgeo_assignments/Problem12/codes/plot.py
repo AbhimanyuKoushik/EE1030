@@ -2,15 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the points from the text file
-points = np.loadtxt("line_points.txt", delimiter=',', max_rows=len(list(open("./line_points.txt")))-2)
+points = np.loadtxt("line_points.txt", delimiter=',')
 
 # Extract the x and y coordinates for the points on the line
 x1 = points[:21, 0]
 y1 = points[:21, 1]
 
 # Load the direction vector and normal vector from the last two lines
-dirvector = np.loadtxt("line_points.txt", delimiter=',', skiprows=len(list(open("./line_points.txt")))-2, max_rows=1)
-normvector = np.loadtxt("line_points.txt", delimiter=',', skiprows=len(list(open("./line_points.txt")))-1, max_rows=1)
+dirvector = [points[41,0],points[41,1]]
+normvector = [points[62,0],points[62,1]]
 
 # Normalize the direction and normal vectors to unit vectors
 dirvector_magnitude = np.linalg.norm(dirvector)
