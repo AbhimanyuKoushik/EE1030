@@ -31,6 +31,11 @@ plt.plot(line_x, line_y, color='green', label='Line: y = 4x - 3')
 plt.scatter(A[0], A[1], color='blue', label='Point A(2,3)')
 plt.scatter(B[0], B[1], color='purple', label='Point B(4,5)')
 
+# Label point A on the plot
+plt.text(A[0] + 0.2, A[1] - 0.3, 'A(2,3)', color='blue', fontsize=9)
+plt.text(B[0] + 0.2, B[1] - 0.3, 'B(4,5)', color='purple', fontsize=9)
+plt.text(centre[0] + 0.2, centre[1] - 0.7, 'C(4,5)', color='red', fontsize=9)
+
 # Label the axes and add a title
 plt.xlabel("x")
 plt.ylabel("y")
