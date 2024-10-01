@@ -17,8 +17,8 @@ line_x = np.linspace(min(x), max(x), 400)
 line_y = 4*line_x - 3
 
 # Define points A(2,3) and B(4,5)
-A = np.array([2, 3])
-B = np.array([4, 5])
+x1 = np.array([2, 3])
+x2 = np.array([4, 5])
 
 # Plot the circle
 plt.scatter(centre[0], centre[1], color='red', marker='o', label='Centre of the Circle')
@@ -28,18 +28,18 @@ plt.plot(x, y, label=f'Circle with radius {radius:.2f} and centre at ({centre[0]
 plt.plot(line_x, line_y, color='green', label='Line: y = 4x - 3')
 
 # Plot points A and B
-plt.scatter(A[0], A[1], color='blue', label='Point A(2,3)')
-plt.scatter(B[0], B[1], color='purple', label='Point B(4,5)')
+plt.scatter(x1[0], x1[1], color='blue', label='Point $X_1(2,3)$')
+plt.scatter(x2[0], x2[1], color='purple', label='Point $X_2(4,5)$')
 
 # Label point A on the plot
-plt.text(A[0] + 0.2, A[1] - 0.3, 'A(2,3)', color='blue', fontsize=9)
-plt.text(B[0] + 0.2, B[1] - 0.3, 'B(4,5)', color='purple', fontsize=9)
-plt.text(centre[0] + 0.2, centre[1] - 0.7, 'C(4,5)', color='red', fontsize=9)
+plt.text(x1[0] + 0.2, x1[1] - 0.3, '$X_1(2,3)$', color='blue', fontsize=9)
+plt.text(x2[0] + 0.2, x2[1] - 0.3, '$X_2(4,5)$', color='purple', fontsize=9)
+plt.text(centre[0] + 0.2, centre[1] - 0.7, '$C(4,5)$', color='red', fontsize=9)
 
 # Label the axes and add a title
 plt.xlabel("x")
 plt.ylabel("y")
-plt.title("Circle, Line, and Points A & B")
+plt.title("Circle, Line, and Points $X_1$ & $X_2$")
 plt.grid(True)
 plt.legend(loc='upper right')
 plt.axis('equal')
