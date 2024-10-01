@@ -218,6 +218,8 @@ c[0][0] = a[1][1]/det;
 c[0][1] = -a[1][0]/det;
 c[1][0] = -a[0][1]/det;
 c[1][1] = a[0][0]/det;
+
+c = transposeMat(c,2,2);
 }
 else if(m==3){
 for(i=0;i<m;i++)
@@ -227,12 +229,13 @@ for(i=0;i<m;i++)
       for(j=0;j<m;j++)
 	   c[i][j]=((a[(i+1)%3][(j+1)%3] * a[(i+2)%3][(j+2)%3]) - (a[(i+1)%3][(j+2)%3]*a[(i+2)%3][(j+1)%3]))/det;
    }
+   c = transposeMat(c,3,3);
 }
 else {
 	printf("Invalid input \n");
 	exit(0);
 }
- 
+
 return c;
 }
 // End  function for inverse of 2x2 matrix
