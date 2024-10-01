@@ -28,8 +28,8 @@ plt.plot(x, y, label=f'Circle with radius {radius:.2f} and centre at ({centre[0]
 plt.plot(line_x, line_y, color='green', label='Line: y = 4x - 3')
 
 # Plot points A and B
-plt.scatter(A[0], A[1], color='blue', s=100, label='Point A(2,3)')
-plt.scatter(B[0], B[1], color='purple', s=100, label='Point B(4,5)')
+plt.scatter(A[0], A[1], color='blue', label='Point A(2,3)')
+plt.scatter(B[0], B[1], color='purple', label='Point B(4,5)')
 
 # Label the axes and add a title
 plt.xlabel("x")
