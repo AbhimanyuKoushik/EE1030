@@ -16,8 +16,8 @@ x2 = np.array([2, -4])
 plt.plot(x, y, label='Parabola')
 
 # Plot the specific points
-plt.scatter(x1[0], x1[1], color='green', marker='o', label='Point $X_1(0,0)$')
-plt.scatter(x2[0], x2[1], color='red', marker='o', label='Point $X_2(4,4)$')
+plt.scatter(x1[0], x1[1], color='green', marker='o', label='Point $X_1(2,4)$')
+plt.scatter(x2[0], x2[1], color='red', marker='o', label='Point $X_2(2,-4)$')
 
 # Define the line equation x = 2
 line_y = np.linspace(min(y), max(y), 400)
