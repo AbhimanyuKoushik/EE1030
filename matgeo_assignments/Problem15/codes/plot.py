@@ -26,6 +26,9 @@ line_x = line_y * 0 + 2
 # Plot the line x=2
 plt.plot(line_x, line_y, color='green', label='Line: x = 2')
 
+plt.text(x1[0] + 0.2, x1[1] - 0.3, '$X_1(2,4)$', color='green', fontsize=9)
+plt.text(x2[0] + 0.2, x2[1] - 0.3, '$X_2(2,-4)$', color='red', fontsize=9)
+
 # Fill the closed region between the parabola and the line x=2
 # We want to fill only the region where x <= 2 (parabola on the left of the line)
 plt.fill_between(x, y, where=(x <= 2), color='blue', alpha=0.3, label='Shaded Region')
