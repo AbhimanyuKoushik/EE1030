@@ -48,7 +48,7 @@
 % \bigskip
 {\let\newpage\relax\maketitle}
 \textbf{Question:}\\
-Find the area of region bounded by the line $x=2$ and the parabola $y^2=8x$\\
+Find the area of the region \cbrak{\brak{x,y}:x^2\leq y \leq x}, using integration.\\
 \textbf{Solution:}
 \begin{table}[h!]    
   \centering
@@ -64,42 +64,53 @@ The equation of a line in vector form is
 \begin{align}
 \vec{x}&=\vec{h}+\kappa\vec{m}
 \end{align}
-For the given parabola $y^2=8x$, The values of $\vec{V}$,$\vec{u}$,$f$ are
+For the given parabola $y=x^2$, The values of $\vec{V}$,$\vec{u}$,$f$ are
 \begin{align}
-\vec{V}&=\myvec{0 & 0\\0 & 1}\\
-\vec{u}&=\myvec{-4\\0}\\
+\vec{V}&=\myvec{1 & 0\\0 & 0}\\
+\vec{u}&=\myvec{0\\\frac{-1}{2}}\\
 f&=0
 \end{align}
-For the given line $x=2$, The values of $\vec{h}$, $\vec{m}$ are
+For the given line $x=y$, The values of $\vec{h}$, $\vec{m}$ are
 \begin{align}
-\vec{h}&=\myvec{2\\0}\\
-\vec{m}&=\myvec{0\\1}
+\vec{h}&=\myvec{0\\0}\\
+\vec{m}&=\myvec{1\\1}
 \end{align}
 Substituing the line equation in parabola equation gives the values of $\kappa$
 \begin{align}
 \brak{\vec{h}+\kappa\vec{m}}^\top\vec{V}\brak{\vec{h}+\kappa\vec{m}} + 2\vec{u}^\top\brak{\vec{h}+\kappa\vec{m}} + f &= 0\\
-\brak{\myvec{2\\0}+\kappa\myvec{0\\1}}^\top\myvec{0 & 0\\0 & 1}\brak{\myvec{2\\0}+\kappa\myvec{0\\1}} + 2\myvec{-4\\0}^\top\brak{\myvec{2\\0}+\kappa\myvec{0\\1}} + 0 &= 0\\
-\myvec{2&\kappa}\myvec{0&0\\0&1}\myvec{2\\\kappa}+2\myvec{-4&0}\myvec{2\\\kappa} &= 0\\
-\myvec{2&\kappa}\myvec{0\\\kappa}+2\brak{-8} &= 0\\
-\kappa^2-16 &= 0\\
-\kappa_1&=4\\
-\kappa_2&=-4\\
+\brak{\myvec{0\\0}+\kappa\myvec{1\\1}}^\top\myvec{1 & 0\\0 & 0}\brak{\myvec{0\\0}+\kappa\myvec{1\\1}} + 2\myvec{0\\\frac{-1}{2}}^\top\brak{\myvec{0\\0}+\kappa\myvec{1\\1}} + 0 &= 0\\
+\myvec{\kappa&\kappa}\myvec{1&0\\0&0}\myvec{\kappa\\\kappa}+2\myvec{0&\frac{-1}{2}}\myvec{\kappa\\\kappa} &= 0\\
+\myvec{\kappa&\kappa}\myvec{\kappa\\0}-\brak{\kappa} &= 0\\
+\kappa^2-\kappa &= 0\\
+\kappa_1&=0\\
+\kappa_2&=1
 \end{align}
 The intersection points are
 \begin{align}
 \vec{x_1} &= \vec{h}+\kappa_1\vec{m}\\
-\vec{x_1} &= \myvec{2\\4}\\
+\vec{x_1} &= \myvec{0\\0}\\
 \vec{x_2} &= \vec{h}+\kappa_2\vec{m}\\
-\vec{x_2} &= \myvec{2\\-4}
+\vec{x_2} &= \myvec{1\\1}
 \end{align}
-The Area under the curve is given by
+The Area under the curve $y=x^2$ is given by
 \begin{align}
-A &= \int_{-4}^{4}\brak{\frac{y^2}{8}}dy\\
-A &= \brak{\frac{1}{8}}\brak{\frac{4^3 - \brak{-4^3}}{3}}\\
-A &= \brak{\frac{1}{24}}\brak{128}\\
-A &= \frac{16}{3}
+A_1 &= \int_{0}^{1}\brak{x^2}dx\\
+A_1 &= \brak{\frac{1^3 - \brak{0^3}}{3}}\\
+A_1 &= \frac{1}{3}
 \end{align}
-The area of region bounded by the line $x=2$ and the parabola $y^2=8x$ is $\frac{16}{3}$
+The Area under the line $y=x$ is given by
+\begin{align}
+A_2 &= \int_{0}^{1}\brak{x}dx\\
+A_2 &= \brak{\frac{1^2 - \brak{0^2}}{2}}\\
+A_2 &= \frac{1}{2}
+\end{align}
+The area of region bounded by the line $x=y$ and the parabola $y=x^2$ is given by
+\begin{align}
+A &= A_2-A_1\\
+A &= \frac{1}{2}-\frac{1}{3}\\
+A &= \frac{1}{6}
+\end{align}
+The area of region bounded by the line $x=y$ and the parabola $y=x^2$ is $\frac{1}{6}$.
 \begin{figure}[h!]
    \centering
    \includegraphics[width = 1\linewidth]{figs/fig.png}
