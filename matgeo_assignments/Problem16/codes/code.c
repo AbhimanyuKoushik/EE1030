@@ -10,12 +10,14 @@
 #include "libs/geofun.h"
 
 typedef struct {
-    double m[2][2];
-} Matrix2x2;
-
-typedef struct {
     double v[2];
 } Vector2x1;
+
+typedef struct {
+    double V[2][2];
+    Vector2x1 u;
+    double f;
+} Parabola;
 
 void parab_x2_4ay_gen(FILE *fptr, Vector2x1 *p1, Vector2x1 *p2, double a, int num_points) {
     double tinit = p1->v[0] / (2 * a);
@@ -38,24 +40,24 @@ void parab_x2_4ay_gen(FILE *fptr, Vector2x1 *p1, Vector2x1 *p2, double a, int nu
     }
 }
 
-Vector2x1* intersect_of_parab_line(Matrix2x2 *V, Vector2x1 *u, double f, Vector2x1 *point_on_line, Vector2x1 *dir) {
+Vector2x1* intersect_of_parab_line(Parabola *parabola, Vector2x1 *point_on_line, Vector2x1 *dir) {
     double m1 = dir->v[0];
     double m2 = dir->v[1];
 
-    double V1 = V->m[0][0];
-    double V2 = V->m[1][0];
-    double V3 = V->m[0][1];
-    double V4 = V->m[1][1];
+    double V1 = parabola->V[0][0];
+    double V2 = parabola->V[1][0];
+    double V3 = parabola->V[0][1];
+    double V4 = parabola->V[1][1];
 
-    double u1 = u->v[0];
-    double u2 = u->v[1];
+    double u1 = parabola->u.v[0];
+    double u2 = parabola->u.v[1];
 
     double h1 = point_on_line->v[0];
     double h2 = point_on_line->v[1];
 
     double A = V1 * m1 * m1 + (V2 + V3) * m1 * m2 + V4 * m2 * m2;
     double B = 2 * (m1 * (V1 * h1 + V2 * h2 + u1) + m2 * (V3 * h1 + V4 * h2 + u2));
-    double C = h1 * (V1 * h1 + V2 * h2) + h2 * (V3 * h1 + V4 * h2) + 2 * (u1 * h1 + u2 * h2) + f;
+    double C = h1 * (V1 * h1 + V2 * h2) + h2 * (V3 * h1 + V4 * h2) + 2 * (u1 * h1 + u2 * h2) + parabola->f;
 
     if (B * B - 4 * A * C < 0) {
         return NULL;
@@ -98,14 +100,21 @@ double identity(double x) {
 }
 
 int main() {
-    Matrix2x2 V = {{{1, 0}, {0, 0}}};
-    Vector2x1 u = {{0, -0.5}};
-    double f = 0;
+    Parabola parabola = {
+        .V = {{1, 0}, {0, 0}},
+        .u = {{0, -0.5}},
+        .f = 0
+    };
 
     Vector2x1 point_on_line = {{0, 0}};
     Vector2x1 dir = {{1, 1}};
 
-    Vector2x1 *intersection = intersect_of_parab_line(&V, &u, f, &point_on_line, &dir);
+    Vector2x1 *intersection = intersect_of_parab_line(&parabola, &point_on_line, &dir);
+
+    if (intersection == NULL) {
+        printf("No real intersection found.\n");
+        return 1;
+    }
 
     Vector2x1 p1 = {{intersection[0].v[0], intersection[0].v[1]}};
     Vector2x1 p2 = {{intersection[1].v[0], intersection[1].v[1]}};
@@ -116,9 +125,10 @@ int main() {
         return 1;
     }
 
-    parab_x2_4ay_gen(fptr, &p1, &p2, -u.v[1] / 2, 200);
+    parab_x2_4ay_gen(fptr, &p1, &p2, -parabola.u.v[1] / 2, 200);
 
-    fprintf(fptr, "The area between the given curve and line is %lf", area(identity, 0, 1) - area(square, 0, 1));
+    fprintf(fptr, "The area between the given curve and line is %lf", 
+            area(identity, 0, 1) - area(square, 0, 1));
 
     fclose(fptr);
 
