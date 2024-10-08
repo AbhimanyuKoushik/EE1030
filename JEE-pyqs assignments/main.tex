@@ -1,0 +1,212 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}     
+\usepackage{xparse}
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+% Marks the beginning of the document
+\begin{document}
+\title{Assignment 1}
+\author{EE24Btech11024 - G. Abhimanyu Koushik}
+\maketitle
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{enumerate}
+\item For which of the following ordered pairs \brak{\mu,\delta} the system of linear equations\newline
+$x+2y+3z=1$\newline
+$3x+4y+5z=\mu\newline
+4x+4y+4z=\delta$\newline
+is inconsistent?
+\begin{enumerate}
+\begin{multicols}{4}
+\item \brak{4,6}
+\item \brak{3,4}
+\item \brak{1,0}
+\item \brak{4,3}
+\end{multicols}
+\end{enumerate}
+
+\item Let $y=f\brak{x}$ be a solution to the differential equation\newline
+$\sqrt{1-x^2}\frac{dy}{dx}+\sqrt{1-y^2} = 0 \text{, } \abs{x}<1$\newline
+If $y\brak{\frac{1}{2}} = \frac{\sqrt{3}}{2}$, then $y\brak{-\frac{1}{\sqrt{2}}}$ is equal to
+\begin{enumerate}
+\begin{multicols}{2}
+\item $-\frac{1}{\sqrt{2}}$
+\item $-\frac{\sqrt{3}}{2}$
+\item $\frac{1}{\sqrt{2}}$
+\item $\frac{\sqrt{3}}{2}$
+\end{multicols}
+\end{enumerate}
+
+\item If $a$, $b$ and $c$ are the greatest values of $\comb{19}{p}$, $\comb{20}{q}$, $\comb{21}{r}$ respectively, then:
+\begin{enumerate}
+\item $\brak{\frac{a}{11}} = \brak{\frac{b}{22}} = \brak{\frac{c}{42}}$
+\item $\brak{\frac{a}{10}} = \brak{\frac{b}{11}} = \brak{\frac{c}{42}}$
+\item $\brak{\frac{a}{11}} = \brak{\frac{b}{22}} = \brak{\frac{c}{21}}$
+\item $\brak{\frac{a}{10}} = \brak{\frac{b}{11}} = \brak{\frac{c}{21}}$
+\end{enumerate}
+
+\item Which of the following is a tautology?
+\begin{enumerate}
+\item $\brak{P\wedge\brak{P\rightarrow Q}}\rightarrow Q$
+\item $P\wedge \brak{P\vee Q}$
+\item $\brak{Q\rightarrow\brak{\wedge\brak{P\rightarrow Q}}}$
+\item $P\vee \brak{P\wedge Q}$
+\end{enumerate}
+
+\item Let $f:\mathbb{R}\rightarrow\mathbb{R}$ be such that for all $x\in\mathbb{R}$, \brak{2^{1+x}+2^{1-x}}, $f\brak{x}$ and \brak{3^x+3^{-x}} are in A.P, then the minimum value of $f\brak{x}$ is:
+\begin{enumerate}
+\begin{multicols}{4}
+\item $0$
+\item $4$
+\item $3$
+\item $2$
+\end{multicols}
+\end{enumerate}
+
+\item The locus of a point which divides the line segment joining the point \brak{0,-1} and a point on parabola, $x^2 = 4y$, internally in the ration $1:2$ is:
+\begin{enumerate}
+\item $9x^2-12y=8$
+\item $4x^2-3y=2$
+\item $x^2-3y=2$
+\item $9x^2-3y=2$
+\end{enumerate}
+
+\item For $a>0$, let the curves $C_1$:$y^2=ax$ and $C_2$:$x^2=ay$ intersect at origin $\vec{O}$ and a point $\vec{P}$. Let the line $x=b\brak{0<b<a}$ intersect the chord $OP$ and the x-axis at points $\vec{Q}$ and $\vec{R}$, respectively. If the line $x=b$ bisects the area bounded by the curves, $C_1$ and $C_2$, and the area of $\Delta OQR = \frac{1}{2}$, then $a$ satisfies the equation
+\begin{enumerate}
+\item $x^6-12x^3+4=0$
+\item $x^6-12x^3-4=0$
+\item $x^6+6x^3-4=0$
+\item $x^6-6x^3+4=0$
+\end{enumerate}
+
+\item The inverse of the function $f\brak{x}=\frac{8^{2x}-8^{-2x}}{8^{2x}+8^{-2x}}$ is
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\frac{1}{4}\brak{log_8{e}}log_e{\brak{\frac{1+x}{1-x}}}$
+\item $\frac{1}{4}\brak{log_8{e}}log_e{\brak{\frac{1-x}{1+x}}}$
+\item $\frac{1}{4}log_e{\brak{\frac{1+x}{1-x}}}$
+\item $\frac{1}{4}log_e{\brak{\frac{1-x}{1+x}}}$
+\end{multicols}
+\end{enumerate}
+
+\item $\lim_{x\to 0}\brak{\frac{3x^2+2}{7x^2+2}}^{\frac{1}{x^2}}$ is equal to
+\begin{enumerate}
+\begin{multicols}{4}
+\item $e$
+\item $\frac{1}{e^2}$
+\item $\frac{1}{e}$
+\item $e^2$
+\end{multicols}
+\end{enumerate}
+
+\item Let $f\brak{x}=\brak{\sin{\tan^{-1}x}+\sin{\cot^{-1}x}}^2-1$ where $abs{x}>1$. If\newline
+$\frac{dy}{dx}=\frac{1}{2}\frac{d}{dx}\brak{\sin^{-1}f\brak{x}}$\newline
+and $y\brak{\sqrt{3}}=\frac{\pi}{6}$, then $y\brak{-\sqrt{3}}$ is equal to:
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\frac{\pi}{3}$
+\item $\frac{2\pi}{3}$
+\item $-\frac{\pi}{6}$
+\item $\frac{5\pi}{6}$
+\end{multicols}
+\end{enumerate}
+
+\item If the equation, $x^2+bx+45=0 \brak{b\in\mathbb{R}}$ has conjugate complex roots and they satisfy $\abs{z+1}=2\sqrt{10}$, then:
+\begin{enumerate}
+\begin{multicols}{2}
+\item $b^2+b=12$
+\item $b^2-b=42$
+\item $b^2-b=30$
+\item $b^2+b=72$
+\end{multicols}
+\end{enumerate}
+
+\item The mean and standard deviation of $10$ observations are $20$ and $2$ respectively. Each of these $10$ observations is multiplied by $p$ and then reduced by $q$, where $p\neq 0$ and $q\neq 0$. If the new mean and standard deviation become half of their original values, then $q$ is equal to:
+\begin{enumerate}
+\begin{multicols}{4}
+\item $-20$
+\item $-5$
+\item $10$
+\item $-10$
+\end{multicols}
+\end{enumerate}
+
+\item If $\int \frac{\cos x}{\sin^{3}x\brak{1+\sin^{6}x}^{\frac{2}{3}}}dx = f\brak{x}\brak{1+\sin^{6}x}^{\frac{1}{\lambda}}+c$, where $c$ is a constant of integration, then $\lambda f\brak{\frac{\pi}{3}}$ is equal to:
+\begin{enumerate}
+\begin{multicols}{4}
+\item $-\frac{9}{8}$
+\item $\frac{9}{8}$
+\item $2$
+\item $-2$
+\end{multicols}
+\end{enumerate}
+
+\item Let $A$ and $B$ be two independent events such that $P\brak{A}=\frac{1}{3}$ and $P\brak{B}=\frac{1}{6}$. Then which of the following is \textbf{TRUE}?
+\begin{enumerate}
+\begin{multicols}{2}
+\item $P\brak{\frac{A}{A\cup B}}=\frac{1}{4}$
+\item $P\brak{\frac{A}{B'}}=\frac{1}{3}$
+\item $P\brak{\frac{A}{B}}=\frac{2}{3}$
+\item $P\brak{\frac{A'}{B'}}=\frac{1}{3}$
+\end{multicols}
+\end{enumerate}
+
+\item If volume of a parallelepiped whose coterminous edges are given by\newline
+$\overrightarrow{u} = \hat{i}+\hat{j}+\lambda\hat{k}$,\newline
+$\overrightarrow{v} = \hat{i}+\hat{j}+3\hat{k}$ and\newline
+$\overrightarrow{w} = 2\hat{i}+\hat{j}+\hat{k}$\newline
+be $1$cu.unit. If $\theta$ is the angle between the edges $\overrightarrow{u}$ and $\overrightarrow{w}$ then, $\cos\theta$ will be:
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\frac{7}{6\sqrt{6}}$
+\item $\frac{5}{7}$
+\item $\frac{7}{6\sqrt{3}}$
+\item $\frac{5}{3\sqrt{3}}$
+\end{multicols}
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+
