@@ -1,0 +1,240 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}     
+\usepackage{xparse}
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+% Marks the beginning of the document
+\begin{document}
+\title{Assignment 4}
+\author{EE24Btech11024 - G. Abhimanyu Koushik}
+\maketitle
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{enumerate}
+
+\item Let $f:\mathbb{R}\rightarrow\mathbb{R}$ be defined as $f\brak{x}=x-1$ and $g:\mathbb{R}-\cbrak{-1,1}\rightarrow\mathbb{R}$ be defined as $g\brak{x}=\frac{x^2}{x^2-1}$. Then the function $f\circ g$ is:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{2}
+\item one-one but not onto function
+\item onto but not one-one function
+\item both one-one and onto function
+\item neither one-one nor onto function
+\end{multicols}
+\end{enumerate}
+
+
+\item If the system of equations $\alpha x+y+z=5$, $x+2y+3z=4$, $x+3y+5z=\beta$, has infinitely many solutions, then the ordered pair $\brak{\alpha,\beta}$ is equal to:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\brak{1,-3}$
+\item $\brak{-1,3}$
+\item $\brak{1,3}$
+\item $\brak{-1,-3}$
+\end{multicols}
+\end{enumerate}
+
+\item If $A = \sum_{n=1}^{\infty}\frac{1}{\brak{3+\brak{-1}^n}^n}$ and $B = \sum_{n=1}^{\infty}\frac{\brak{-1}^n}{\brak{3+\brak{-1}^n}^n}$, then $\frac{A}{B}$ is equal to:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\frac{11}{9}$
+\item $1$
+\item $-\frac{11}{9}$
+\item $-\frac{11}{3}$
+\end{multicols}
+\end{enumerate}
+
+\item $\lim_{x\to 0}\frac{\cos\brak{\sin x}-\cos x}{x^4}$ is equal to:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\frac{1}{3}$
+\item $\frac{1}{4}$
+\item $\frac{1}{6}$
+\item $\frac{1}{12}$
+\end{multicols}
+\end{enumerate}
+
+\item Let $f\brak{x}=\min\cbrak{1,1+x\sin x}$, $0\leq x\leq 2\pi$. If m is the number of points where f is not differentiable and n is the number of points where f is not continuous, then the ordered par $\brak{m,n}$ is equal to
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\brak{2,0}$
+\item $\brak{1,0}$
+\item $\brak{1,1}$
+\item $\brak{2,1}$
+\end{multicols}
+\end{enumerate}
+
+\item Consider a cuboid of sides $2x$, $4x$ and $5x$ and a closed hemisphere of radius $r$. If the sum of their surface areas is constant $k$, then the ratio $x:r$, for which the sum of their volumes is maximum is 
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $2:5$
+\item $19:45$
+\item $3:8$
+\item $19:15$
+\end{multicols}
+\end{enumerate}
+
+\item The area of region bounded by $y^2=8x$ and $y^2=16\brak{3-x}$ is equal to:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\frac{32}{3}$
+\item $\frac{40}{3}$
+\item $16$
+\item $19$
+\end{multicols}
+\end{enumerate}
+
+\item If $\int\frac{1}{x}\sqrt{\frac{1-x}{1+x}}dx=g\brak{x}+c$, $g\brak{1}=0$, then $g\brak{\frac{1}{2}}$ is equal to:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\log_e{\brak{\frac{\sqrt{3}-1}{\sqrt{3}+1}}}+\frac{\pi}{3}$
+\item $\log_e{\brak{\frac{\sqrt{3}+1}{\sqrt{3}-1}}}+\frac{\pi}{3}$
+\item $\log_e{\brak{\frac{\sqrt{3}+1}{\sqrt{3}-1}}}-\frac{\pi}{3}$
+\item $\log_e{\brak{\frac{\sqrt{3}-1}{\sqrt{3}+1}}}-\frac{\pi}{6}$
+\end{multicols}
+\end{enumerate}
+
+\item If $y=y\brak{x}$ is the solution of the differential equation $x\frac{dy}{dx}+2y=xe^x$, $y\brak{1}=0$ then the local maximum value of the function $z\brak{x}=x^2 y\brak{x} - e^x$, $x \in \mathbb{R}$ is:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $1-e$
+\item $0$
+\item $\frac{1}{2}$
+\item $\frac{4}{e}-e$
+\end{multicols}
+\end{enumerate}
+
+\item If the solution to the differential equation $\frac{dy}{dx}+e^{x}\brak{x^2-2}y=\brak{x^2-2x}\brak{x^2-2}e^{2x}$ satisfies $y\brak{0}=0$, then the value of $y\brak{2}$ is \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $-1$
+\item $1$
+\item $0$
+\item $e$
+\end{multicols}
+\end{enumerate}
+
+\item If $m$ is the slope of a common tangent to curves $\frac{x^2}{16}+\frac{y^2}{9}=1$ and $x^2+y^2=12$, them $12m^2$ is equal to:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $6$
+\item $9$
+\item $10$
+\item $12$
+\end{multicols}
+\end{enumerate}
+
+\item The locus of the mid point of the line segment joining the point \brak{4,3} and the points on the ellipse $x^2+2y^2=4$ is an ellipse with eccentricity:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\frac{\sqrt{3}}{2}$
+\item $\frac{1}{2\sqrt{2}}$
+\item $\frac{1}{\sqrt{2}}$
+\item $\frac{1}{2}$
+\end{multicols}
+\end{enumerate}
+
+\item The normal to the hyperbola $\frac{x^2}{a^2}-\frac{y^2}{9}=1$ at the point \brak{8,3\sqrt{3}} on it passes through the point:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item \brak{15,-2\sqrt{3}}
+\item \brak{9,2\sqrt{3}}
+\item \brak{-1,9\sqrt{3}}
+\item \brak{-1,6\sqrt{3}}
+\end{multicols}
+\end{enumerate}
+
+\item If the plane $2x+y-5z=0$ is rotated about its line of intersection with the plane $3x-y+4z-7=0$ by an angle $\frac{\pi}{2}$. then the plane after the rotation passes through the point:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\brak{2,-2,0}$
+\item $\brak{-2,2,0}$
+\item $\brak{1,0,2}$
+\item $\brak{-1,0,-2}$
+\end{multicols}
+\end{enumerate}
+
+\item If the lines $\vec{r}=\brak{\vec{i}-\vec{j}+\vec{k}}+\lambda\brak{3\vec{j}-\vec{k}}$ and $\vec{r}=\brak{\alpha\vec{i}-\vec{j}}+\mu\brak{2\vec{i}-3\vec{k}}$ are co-planar, then the distance of the plane contaioning these two lines from the point \brak{\alpha,0,0} is:
+
+\hfill{\brak{\text{Jun 2022}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\frac{2}{9}$
+\item $\frac{2}{11}$
+\item $\frac{4}{11}$
+\item $2$
+\end{multicols}
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+
