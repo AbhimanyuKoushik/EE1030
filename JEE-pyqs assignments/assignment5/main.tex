@@ -1,0 +1,166 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}     
+\usepackage{xparse}
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+% Marks the beginning of the document
+\begin{document}
+\title{Assignment 5}
+\author{EE24Btech11024 - G. Abhimanyu Koushik}
+\maketitle
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\subsection{Multiple Choice}
+\begin{enumerate}
+
+\item The relation $R=\cbrak{\brak{a,b}:\gcd\brak{a,b}=1,2a\neq b,a,b\in \mathbb{Z}}$ is:\rule{1cm}{0.15mm} 
+
+\hfill{\brak{\text{Jan 2023}}}
+\begin{enumerate}
+\begin{multicols}{2}
+\item Transitive but not reflexive
+\item Symmetric but not transitive
+\item Reflexive but not symmetric
+\item Neither symmetric nor transitive
+\end{multicols}
+\end{enumerate}
+
+\item The compound statement $\brak{\sim\brak{P\wedge Q}}\vee\brak{\brak{\sim P}\wedge Q}\implies\brak{\brak{\sim P}\wedge\brak{\sim Q}}$ is equivalent to
+
+\hfill{\brak{\text{Jan 2023}}}
+\begin{enumerate}
+\begin{multicols}{2}
+\item $\brak{\brak{\sim P}\vee Q}\wedge\brak{\brak{\sim Q}\vee P}$
+\item $\brak{\sim Q}\vee P$
+\item $\brak{\brak{\sim P}\vee Q}\wedge\brak{\sim Q}$
+\item $\brak{\sim P}\vee Q$
+\end{multicols}
+\end{enumerate}
+
+\item Let $f\brak{x} = \begin{cases} x^2\sin\brak{\frac{1}{x}} & x\neq 0, \\0 & x=0 .\end{cases}$; Then at $x=0$
+
+\hfill{\brak{\text{Jan 2023}}}
+\begin{enumerate}
+\begin{multicols}{2}
+\item $f$ is continuous but not differentiable
+\item $f$ is continuous but $f^\prime$ is not continuous
+\item $f$ and $f^\prime$ both are continuous 
+\item $f^\prime$ is continuous but not differentiable
+\end{multicols}
+\end{enumerate}
+
+\item The equation $x^2-4x+\sbrak{x}+3=x\sbrak{x}$, where $\sbrak{x}$ denotes greatest integer function, has:
+\hfill{\brak{\text{Jan 2023}}}
+\begin{enumerate}
+\begin{multicols}{2}
+\item Exactly two solutions in $\brak{-\infty,\infty}$
+\item No solution
+\item A unique solution in $\brak{-\infty,1}$
+\item A unique solution in $\brak{-\infty,\infty}$
+\end{multicols}
+\end{enumerate}
+
+\item Let $\Omega$ be the sample space and $A\subseteq \Omega$ be an event. Given below are two statements:\newline
+$\brak{\text{S} 1}$: If $P\brak{A}=0$, then $A=\phi$\newline
+$\brak{\text{S} 2}$: If $P\brak{A}=1$, then $A=\Omega$\newline
+Then
+
+\hfill{\brak{\text{Jan 2023}}}
+\begin{enumerate}
+\begin{multicols}{2}
+\item Only $\brak{\text{S} 1}$ is true
+\item Only $\brak{\text{S} 2}$ is true
+\item Both $\brak{\text{S} 1}$ and $\brak{\text{S} 2}$ are true
+\item Both $\brak{\text{S} 1}$ and $\brak{\text{S} 2}$ are false
+\end{multicols}
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Numericals}
+\begin{enumerate}
+
+\item Let $C$ be the largest circle centred at $\brak{2,0}$ and inscribed in the ellipse $\frac{x^2}{36}+\frac{y^2}{16}=1$. If \brak{1,\alpha} lies on $C$, then $10\alpha^2$ is equal to \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\item Suppose $\sum_{r=0}^{2023}r^2\times\comb{2023}{r} = 2023\times\alpha\times 2^{2022}$. Then the value of $\alpha$ is \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\item The value of $12\int_{0}^{3}\abs{x^2-3x+2}dx$ is \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\item The number of $9$ digit numbers, that can be formed using all the digits of the number $123412341$ so that the even digits occupy only even places is \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\item Let $\lambda \in \mathbb{R}$ and let the equation $E$ be $\abs{x}^2-2\abs{x}+\abs{\lambda-3}=0$. Then the largest element in set $S=\cbrak{x+\lambda:x\text{ is an integer solution of }E}$ is \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\item A boy needs to select $5$ courses from $12$ available courses, out of which $5$ courses are language courses. If  he can choose at most $2$ language courses, then the number of ways he can choose five courses is \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\item Let a tangent to the curve $9x^2+16y^2=144$ intersect coordinate axes at points $\vec{A}$ and $\vec{B}$. Then, the minimum length of the line segment $AB$ is \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\item The value of $\frac{8}{\pi}\int_{0}^{\frac{\pi}{2}}\frac{\brak{\cos x}^{2023}}{\brak{\sin x}^{2023}+\brak{\cos x}^{2023}}dx$ is \rule{1cm}{0.15mm}. 
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\item The shortest distance between the lines $\frac{x-2}{3}=\frac{y+1}{2}=\frac{z-6}{2}$ and $\frac{x-6}{3}=\frac{1-y}{2}=\frac{z+8}{0}$ is equal to \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\item The $4$\textsuperscript{th} term of GP is $500$ and its common ratio is $\frac{1}{m}$, $m\in \mathbb{N}$. Let $S_n$ denote the sum of the first $n$ terms of this GP. If $S_6>S_5+1$ and $S_7>S_6+\frac{1}{2}$, then the number of possible values of $m$ is \rule{1cm}{0.15mm}.
+
+\hfill{\brak{\text{Jan 2023}}}
+
+\end{enumerate}
+\end{document}
+
