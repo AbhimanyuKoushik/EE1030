@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.6)  9 OCT 2024 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.8.6)  10 OCT 2024 11:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1350,15 +1350,26 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 5
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./main.aux)
+)
+<figs/fig1.png, id=15, 444.66125pt x 307.1475pt>
+File: figs/fig1.png Graphic file (type png)
+<use figs/fig1.png>
+Package pdftex.def Info: figs/fig1.png  used on input line 136.
+(pdftex.def)             Requested size: 206.39685pt x 142.56433pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2 <./figs/fig1.png>]
+(./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D245EEC9CF98203FDEC793C53699D3F5;224.
  ) 
 Here is how much of TeX's memory you used:
- 29846 strings out of 478287
- 587715 string characters out of 5849290
+ 29855 strings out of 478287
+ 587841 string characters out of 5849290
  869653 words of memory out of 5000000
- 47358 multiletter control sequences out of 15000+600000
+ 47364 multiletter control sequences out of 15000+600000
  529438 words of font info for 146 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  101i,9n,96p,408b,457s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1371,10 +1382,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (2 pages, 59337 bytes).
+Output written on main.pdf (2 pages, 65842 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 122 PDF objects out of 1000 (max. 8388607)
+ 97 compressed objects within 1 object stream
  40 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 34 words of extra memory for PDF output out of 10000 (max. 10000000)
 
