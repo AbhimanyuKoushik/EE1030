@@ -1,0 +1,260 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}                                        
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}     
+\usepackage{xparse}
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+% Marks the beginning of the document
+\begin{document}
+\title{Assignment 1}
+\author{EE24Btech11024 - G. Abhimanyu Koushik}
+\maketitle
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{enumerate}
+
+\item The consistency and flow resistance of bitumen can be determined from the following
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item Ductility test
+\item Penetration test
+\item Softening point test
+\item Viscosity test
+\end{multicols}
+\end{enumerate}
+
+\item If a two-lane national highway and a two-lane state highway intersect at right angles, the number of potential conflict points at the intersection, assuming both the roads are two-way is
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $11$
+\item $17$
+\item $24$
+\item $32$
+\end{multicols}
+\end{enumerate}
+
+\item In signal design as per Indian Roads Congress specifications, if the sum of the ratios of normal flows to saturation flow of two directional traffic flow is $0.50$ and the total lost time per cycle is $10$ seconds, the optimum cycle length in seconds is
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $100$
+\item $80$
+\item $60$
+\item $40$
+\end{multicols}
+\end{enumerate}
+
+\item For what values of $\alpha$ and $\beta$ the following simultaneous equations have an infinite number of solutions?\newline $x+y+z=5$; $x+3y+3z=9$; $x+2y+\alpha z=\beta$;
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $2$, $7$
+\item $3$, $8$
+\item $8$, $3$
+\item $7$, $2$
+\end{multicols}
+\end{enumerate}
+
+\item A velocity vector is given as $\vec{V}=5xy\hat{i}+2y^2\hat{j}+3yz^2\hat{k}$. The divergence of this velocity vector at $\brak{1,1,1}$ is
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $9$
+\item $10$
+\item $14$
+\item $15$
+\end{multicols}
+\end{enumerate}
+
+\item A body originally at $60^\degree C$ cools down to $40^\degree C$ in $15$ minutes when kept in air at a temperature of $25^\degree C$. What will be the temperature of the body at the end of $30$ minutes?
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $35.2^\degree C$
+\item $31.5^\degree C$
+\item $28.7^\degree C$
+\item $15^\degree C$
+\end{multicols}
+\end{enumerate}
+
+\item The following equation needs to be numerically solved using the Newton-Raphson method.\newline $x^3+4x-9=0$\newline The iterative equation for this purpose is $\brak{k\text{ indicates the iteration level}}$ 
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $x_{k+1}=\frac{2{x_{k}}^3+9}{3{x_{k}}^3+4}$
+\item $x_{k+1}=\frac{3{x_{k}}^3+4}{2{x_{k}}^3+9}$
+\item $x_{k+1}=x_k-3{x_k}^2+4$
+\item $x_{k+1}=\frac{4{x_{k}}^3+3}{9{x_{k}}^3+2}$
+\end{multicols}
+\end{enumerate}
+
+\item Evaluate $\int_{0}^{\infty}\frac{\sin{t}}{t}$
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\pi$
+\item $\frac{\pi}{2}$
+\item $\frac{\pi}{4}$
+\item $\frac{\pi}{8}$
+\end{multicols}
+\end{enumerate}
+
+\item Potential function $\phi$ is given as $\phi=x^2-y^2$. What will be the stream function $\brak{\psi}$ with the condition $\psi=0$ at $x=y=0$?
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $2xy$
+\item $x^2+y^2$
+\item $x^2-y^2$
+\item $2x^2y^2$
+\end{multicols}
+\end{enumerate}
+
+\item The inverse of the $2\times 2$ matrix $\myvec{1&2\\5&7}$ is,
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $\frac{1}{3}\myvec{-7&2\\5&-1}$
+\item $\frac{1}{3}\myvec{7&2\\5&1}$
+\item $\frac{1}{3}\myvec{7&-2\\-5&1}$
+\item $\frac{1}{3}\myvec{-7&-2\\-5&-7}$
+\end{multicols}
+\end{enumerate}
+
+\item Given that one root of the equation $x^3-10x^2+31x-30=0$ is $5$, the other two roots are
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $2$ and $3$
+\item $2$ and $4$
+\item $3$ and $4$
+\item $-2$ and $-3$
+\end{multicols}
+\end{enumerate}
+
+\item If the standard deviation of the spot speed of vehicles in a highway is $8.8kmph$ and the mean speed of the vehicles is $33kmph$, the coefficient of variation in speed is 
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $0.1517$
+\item $0.1867$
+\item $0.2666$
+\item $0.3646$
+\end{multicols}
+\end{enumerate}
+
+\item A metal bar of length $100mm$ is inserted between two rigid supports and its temperature is increased by $10^\degree C$. If the coefficient of thermal expansion is $12\times 10^{-6}$ per $^\degree C$ and the Young's modulus is $2\times 10^5 MPa$, the stress in the bar is
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $0$
+\item $12MPa$
+\item $24MPa$
+\item $2400MPa$
+\end{multicols}
+\end{enumerate}
+
+\item A rigid bar is suspended by three rods made of the same material as shown in the figure. The area and length of the central rod are $3A$ and $L$, respectively while that of the two outer rods are $2A$ and $2L$, respectively. If a downward force of $50kN$ is applied to the rigid bar, the forces in the central and each of the outer rods will be
+\\\begin{center}
+   \scalebox{0.5}{\input{figs/fig1.tex}}
+\end{center}
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\begin{multicols}{4}
+\item $16.67kN$ each
+\item $30kN$ and $15kN$
+\item $30kN$ and $10kN$
+\item $21.4kN$ and $14.3kN$
+\end{multicols}
+\end{enumerate}
+
+\item The maximum and minimum shear stresses in a hollow circular shaft of outer diameter $20mm$ and thickness $2mm$, subjected to torque of $92.7Nm$ will be
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\item $59MPa$ and $47.2MPa$
+\item $100MPa$ and $80MPa$
+\item $118MPa$ and $160MPa$
+\item $200MPa$ and $160MPa$
+\end{enumerate}
+
+\item The shear stress at the neutral axis in a beam of triangular section with a base of $40mm$ and height $20mm$, subjected to shear force of $3kN$ is
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\item $3MPa$
+\item $6MPa$
+\item $10MPa$
+\item $20MPa$
+\end{enumerate}
+
+\item $U_1$ and $U_2$ are the strain energies stored in a prismatic bar due to axial tensile forces $P_1$ and $P_2$, respectively. The strain energy $U$ stored in the same bar due to combined action of $P_1$ and $P_2$ will be
+
+\hfill{\brak{\text{CE 2007}}}
+\begin{enumerate}
+\item $U=U_1+U_2$
+\item $U=U_1U_2$
+\item $U<U_1+U_2$
+\item $U>U_1+U_2$
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+
