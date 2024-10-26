@@ -1,0 +1,40 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+    \draw[thick] (0,0) node[above] {$A$} -- (16,0) node[above right] {$C$} ;
+    \draw[thick] (8,2.5) -- (16,2.5);
+
+    \draw[thick] (0,0) -- (-0.8,-1) -- (0.8,-1) -- (0,0);
+    \draw[thick] (-0.8,-1) -- (-1.6,-1.8);
+    \draw[thick] (0,-1) -- (-0.8,-1.8);
+    \draw[thick] (0.8,-1) -- (0,-1.8);
+    
+    \draw[dashed] (0,0) -- (0,-5);
+    \draw[dashed] (8,0) node[above left] {$B$} -- (8,-5);
+    \draw[dashed] (16,0) -- (16,-5);
+    
+    \draw[thick] (16,0) -- (15.2,-0.6) -- (16.8,-0.6) -- (16,0);
+    \draw[thick] (15.6,-0.8) circle (0.2);
+    \draw[thick] (16.4,-0.8) circle (0.2);
+    
+    \draw[thick] (15.2,-1) -- (16.8,-1);
+    \draw[thick] (15.2,-1) -- (14.4,-1.8);
+    \draw[thick] (16,-1) -- (15.2,-1.8);
+    \draw[thick] (16.8,-1) -- (16,-1.8);
+    
+    \draw[->] (4,-5) node[above, font=\Large] {$2000$} -- (0,-5);
+    \draw[->] (4,-5) -- (8,-5);
+    \draw[->] (12,-5) node[above, font=\Large] {$2000$} -- (16,-5);
+    \draw[->] (12,-5) -- (8,-5);
+    
+    \draw[->] (8,2.5) -- (8,0);
+    \draw[->] (9,2.5) -- (9,0);
+    \draw[->] (10,2.5) -- (10,0);
+    \draw[->] (11,2.5) -- (11,0);
+    \draw[->] (12,2.5) node[above, font=\Large] {$3000$ $Nm^{-1}$}-- (12,0);
+    \draw[->] (13,2.5) -- (13,0);
+    \draw[->] (14,2.5) -- (14,0);
+    \draw[->] (15,2.5) -- (15,0);
+    \draw[->] (16,2.5) -- (16,0);
+
+\end{tikzpicture}
