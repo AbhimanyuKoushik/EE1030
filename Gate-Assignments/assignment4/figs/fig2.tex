@@ -1,0 +1,28 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+\tikzstyle{every node}=[font=\LARGE]
+
+\draw [line width=0.8pt] (6.25,15.5) circle (0.25cm);
+
+\draw [line width=4pt] (6.5,15.5) -- (16.25,15.5);
+
+\draw[pattern = north east lines] (5,14.75) rectangle (7.5,14.25);
+
+\draw [line width=0.8pt, ->, >=Stealth] (16.25,13) -- (16.25,15.5);
+\draw [line width=0.8pt, ->, >=Stealth] (11.25,11.75) -- (6.25,11.75);
+\draw [line width=0.8pt, ->, >=Stealth] (11.25,11.75) -- (16.25,11.75);
+
+\draw[] (16.25,14.25) node[right] {$F$};
+\draw[] (11.25,12.25) node[above] {$L$};
+
+\draw [line width=0.8pt] (16.25,11.25) -- (16.25,12.25);
+\draw [line width=0.8pt] (6.25,11.25) -- (6.25,12.25);
+
+\draw [line width=0.8pt] (5,14.75) -- (7.5,14.75);
+
+\draw [line width=0.8pt] (5.75,15.5) -- (5.75,14.75);
+\draw [line width=0.8pt] (6.75,15.5) -- (6.75,14.75);
+
+\draw [line width=0.8pt] (6.75,15.5) arc[start angle=0, end angle=180, radius=0.5cm];
+\end{tikzpicture}
+
