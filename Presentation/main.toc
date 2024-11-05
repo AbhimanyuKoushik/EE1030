@@ -1,0 +1,10 @@
+\beamer@sectionintoc {2}{Problem}{3}{0}{1}
+\beamer@sectionintoc {3}{Solution}{4}{0}{2}
+\beamer@subsectionintoc {3}{1}{Input Parameters}{4}{0}{2}
+\beamer@subsectionintoc {3}{2}{Linear Equation}{5}{0}{2}
+\beamer@subsectionintoc {3}{3}{Matrix Equation}{6}{0}{2}
+\beamer@subsectionintoc {3}{4}{Row Reduction}{7}{0}{2}
+\beamer@subsectionintoc {3}{5}{Final Answer}{9}{0}{2}
+\beamer@sectionintoc {4}{C Code}{10}{0}{3}
+\beamer@sectionintoc {5}{Python Code}{17}{0}{4}
+\beamer@sectionintoc {6}{Plot of the triangle}{19}{0}{5}
