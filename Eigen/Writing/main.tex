@@ -73,7 +73,7 @@ A matrix is called orthogonal if its inverse is equal to its transpose.
 \end{align}
 Multiply two orthogonal matrices gives another orthogonal matrix.
 The eigenvalues of symmetric values are all real. The eigenvalues of a non-symmetric matrix can be complex. 
-\subsection*{Diagonalization of a Matrx}
+\subsection*{Diagonalization of a Matrix}
 A matrix is said to undergo Similarity transformation if it undergoes the following process.
 \begin{align}
 	A \implies Z^{-1}\cdot A\cdot Z
@@ -192,11 +192,11 @@ Initialising jacobian matrix \brak{\text{The diagonal matrix}}, and keep a thres
 \end{verbatim}
 Applying jacobian transform 8 times, and iterating through each lower triangular element and applying transformation if its absolute value is greater than threshold (basically greater than 0).
 \begin{verbatim}
-                    double theta = (jacobian[q][q] - jacobian[p][p]) / (2 * jacobian[p][q]);
-                    double sgn = (theta != 0) ? (theta > 0 ? 1 : -1) : 0;
-                    double t = sgn / (fabs(theta) + sqrt(theta * theta + 1));
-                    double c = 1 / sqrt(t * t + 1);
-                    double s = t / sqrt(t * t + 1);
+double theta = (jacobian[q][q] - jacobian[p][p]) / (2 * jacobian[p][q]);
+double sgn = (theta != 0) ? (theta > 0 ? 1 : -1) : 0;
+double t = sgn / (fabs(theta) + sqrt(theta * theta + 1));
+double c = 1 / sqrt(t * t + 1);
+double s = t / sqrt(t * t + 1);
 \end{verbatim}
 Calculatint the values of $c$,$s$,$t$ and $\theta$.
 \begin{verbatim}
@@ -400,9 +400,9 @@ The rate of covergence of $A$ depends on the ratio of absolute values of the eig
 \end{align}
 
 \subsection{Givens Rotations}
-The QR decomposition is implemented using the Givens rotation technique. This approach is robust and numerically stable, making it ideal for QR decomposition, especially in iterative methods like eigenvalue computations. It is every similar to Jacobian Transformation. We define a rotation matrix $P$, to zero out the elements which are non-diagonal, since the matrix which we are dealing is a Hessenberg matrix, we need to zero out the elements which are just below the diagonal elements. This shows the significance of Hessenberg form. Initially we zeroed complete columns at once. If we were to apply givens to each and every element, it will take $\frac{n\brak{n-1}}{2}$ orthogonal rotations. Now, computing $P$ and the new $A$, costs in order $O\brak{n^2}$. The whole process together would be in cost of order $O\brak{n^4}$. But now since we only need to do $n-1$ orthogonal rotations, the order becomes $O\brak{n^3}$. The rotation matrix $P$ is defined as 
+The QR decomposition is implemented using the Givens rotation technique. This approach is robust and numerically stable, making it ideal for QR decomposition, especially in iterative methods like eigenvalue computations. It is every similar to Jacobian Transformation. We define a rotation matrix $G$, to zero out the elements which are non-diagonal, since the matrix which we are dealing is a Hessenberg matrix, we need to zero out the elements which are just below the diagonal elements. This shows the significance of Hessenberg form. Initially we zeroed complete columns at once. If we were to apply givens to each and every element, it will take $\frac{n\brak{n-1}}{2}$ orthogonal rotations. Now, computing $G$ and the new $A$, costs in order $O\brak{n^2}$. The whole process together would be in cost of order $O\brak{n^4}$. But now since we only need to do $n-1$ orthogonal rotations, the order becomes $O\brak{n^3}$. The rotation matrix $G$ is defined as 
 \begin{align}
-P = \myvec{
+G = \myvec{
 1 & \cdots & 0 & 0 & \cdots & 0 \\
 \vdots & \ddots & \vdots & \vdots & \reflectbox{$\ddots$} & \vdots \\
 0 & \cdots & c & s & \cdots & 0\\
@@ -413,84 +413,324 @@ P = \myvec{
 \end{align}
 Where the value of $c$ and $s$ are
 \begin{align}
-	c = \frac{\overline{x_{i,i}}}{\sqrt{\abs{x_{i,i}}^2+\abs{x_{i,i+1}}^2}}
+	c = \frac{\overline{x_{i,i}}}{\sqrt{\abs{x_{i,i}}^2+\abs{x_{i,i+1}}^2}}\\
+	s = \frac{\overline{x_{i,i+1}}}{\sqrt{\abs{x_{i,i}}^2+\abs{x_{i,i+1}}^2}}
 \end{align}
-\subsubsection{Givens Rotation Matrix}
-A Givens rotation matrix is a 2x2 orthogonal matrix used to zero out specific elements of a matrix through rotation. The Givens rotation matrix \( G \) is defined as:
+If we multiply $G$ and $A$, we can see easily that it nulls out the element in $\brak{i+1}^{\text{th}}$ row and $i^\text{th}$ column. The following matrix multiplication eliminates all the elements below the diagonal of $A$
+\begin{align}
+	A \implies G_nG_{n-1}\cdots G_2G_1A
+\end{align}
+Now, we store $G_nG_{n-1}\cdots G_2G_1$ in $Q$ and then
+\begin{align}
+	A^\prime \implies QAQ^\top\\
+\end{align}
+If we carry out these transformation infinite times, the $A$ will be an upper triangular matrix with diagonal elements as eigenvalues.
+\subsection{Jordan Blocks}
+If all the entries in the matrix are real but the eigenvalues are complex, the matrix $A$ will converge to a Quasi-triangular form, that is
+\begin{align}
+	A = \myvec{B_1 & 0 & \cdots & 0 \\
+		   0 & B_2 & \cdots & 0\\
+		   \vdots & \cdots & \ddots & 0\\
+		   0 & 0 & 0 & B_n}
+\end{align}
+Where $B_i$ is a $2 \times 2$ block matrix. These matrices are called jordan blocks. In this case, the eigenvalues are calculated by solving the characteristic equation of the $2 \times 2$ matrix. Since it will be a quadratic equation, it can be easily solved and the solutions of that characteristic equation will be the eigenvalues. 
+\subsection{Code}
+\begin{verbatim}
+double complex **qr_converge(double complex **A, int dim) {
+    double complex **H = makehessberg(A, dim);
+    double tolerance = 1e-12;
+\end{verbatim}
+Transforming $A$ into hessenberg form
+\begin{verbatim}
+    for(int i = 0; i < 20*dim; i++){
+    	double complex **Q_T = identity(dim);
+\end{verbatim}
+Inititalizing $Q^\top$ and initializing the QR decomposition to run $20\times n$ times where $n$ is the dimension of the matrix
+\begin{verbatim}
+    	for (int p = 1; p < dim; p++){
+		double complex xi = H[p-1][p-1];
+		double complex xj = H[p][p-1];
+		if(cabs(xi)<0 && cabs(xi)<0){
+			continue;
+		}
+\end{verbatim}
+Skipping the iteration if both the elements are already nulled
+\begin{verbatim}
+		double complex c = conj(xi)/(csqrt(cabs(xi)*cabs(xi)+cabs(xj)*cabs(xj)));
+		double complex s = conj(xj)/(csqrt(cabs(xi)*cabs(xi)+cabs(xj)*cabs(xj)));
+\end{verbatim}
+Finding the values of $c$ and $s$
+\begin{verbatim}
+		double complex **Gi = identity(dim);
+		Gi[p-1][p-1] = c;
+		Gi[p-1][p] = s;
+		Gi[p][p-1] = -conj(s);
+		Gi[p][p] = conj(c);
+\end{verbatim}
+Forming the Givens matrix
+\begin{verbatim}
+		H = Matmul(Gi,H,dim,dim,dim);
+		Q_T = Matmul(Q_T,transposeMat(Gi,dim,dim),dim,dim,dim);
+    	}
+    	H = Matmul(H,Q_T,dim,dim,dim);
+    }
+    return H;
+}
+\end{verbatim}
+Find $Q$ and then transforming the hessenberg matrix to $QHQ^\top$ for number of iteration times and then returning the converged matrix
+\begin{verbatim}
+void calcuppereig(double complex **A, int dim) {
+\end{verbatim}
+Function for printing eigenvalues of a triangular or Quasi-triangular matrix
+\begin{verbatim}
+    int count = 1;
+    for (int i = 0; i < dim; i++) {
+        if (i < dim - 1 && cabs(A[i + 1][i]) > 1e-12) {
+            double complex x1 = A[i][i];
+            double complex x2 = A[i + 1][i + 1];
+            double complex y1 = A[i + 1][i];
+            double complex y2 = A[i][i + 1];
+\end{verbatim}
+Checking if the element is a part of jordan block or not. If it is, then assigning the jordan block values to some variables
+\begin{verbatim}
+            double complex a = 1.0;
+            double complex b = -(x1 + x2);
+            double complex c = x1 * x2 - y1 * y2;
+\end{verbatim}
+Coefficients of the quadratic characteristic equation $x^2 - \brak{x_1+x_2}x + \brak{x_1x_2-y_1y_2} = 0$
+\begin{verbatim}
+double complex eigenvalue1 = (-b + csqrt(b * b - 4.0 * a * c)) / (2.0 * a);
+double complex eigenvalue2 = (-b - csqrt(b * b - 4.0 * a * c)) / (2.0 * a);
+\end{verbatim}
+Solving the equation
+\begin{verbatim}
+if(cabs(eigenvalue2)>1e-12){
+printf("Eigenvalue %d:%.9lf+%.9lfi\n",count
+,creal(eigenvalue1),cimag(eigenvalue1));
+   }
+else{
+printf("Eigenvalue %d: 0.000000000 + 0.000000000i\n", count);
+   }      
+if(cabs(eigenvalue2)>1e-12){
+printf("Eigenvalue %d: %.9lf + %.9lfi\n", count + 1,
+	creal(eigenvalue2), cimag(eigenvalue2));
+   }
+else{
+   printf("Eigenvalue %d: 0.000000000 + 0.000000000i\n", count+1);
+}
+count += 2;
+i++;
+}
+\end{verbatim}
+Printing the values and skipping the next row as it will also be part of same jordan block.
+\begin{verbatim}
+        else{
+        	if(cabs(A[i][i])>1e-12){
+            		printf("Eigenvalue %d: %.9lf + %.9lfi\n", count,
+            			creal(A[i][i]), cimag(A[i][i]));
+            	}
+            	else{
+            		printf("Eigenvalue %d: 0.000000000 + 0.000000000i\n", count);
+            	}
+            count++;
+        }
+    }
+}
 
-\[
-G(\theta) = \begin{pmatrix}
-c & s \\
--s & c
-\end{pmatrix}
-\]
+\end{verbatim}
+In the other case, just printing the diagonal elements as they are the eigenvalues.
+\section{Rayleigh Quotient Iteration}
+\subsection{Mathematical Background}
+The major defect in QR decomposition algorithm is that sometimes the rate of convergence is very low. The idea behind Rayleigh Quotient method is really simple, since the rate of convergence is low, we will increase the rate of convergence by making a shift. According to the order of rate of covergence given in equation \brak{50}, if null of the last element \brak{\lambda_i=0} the order of convergence will be very high. So what we do is we shift the Hessenberg matrix by some amount, apply QR decomposition algorithm and add the shift back. If this shift is exactly the eigenvalue then it completes in very less number of iteration (best case, only 1 iteration). But since we do not know the eigenvalue, we will take the guess to be the last diagonal element.
+\begin{align}
+	H^\prime &= H - \sigma I\\
+	H^\prime &\implies {H^\prime}_{tranformed}\\
+	H_{next} &= {H^\prime}_{tranformed} + \sigma I
+\end{align}
+This method does not change the eigenvalues as
+\begin{align}
+\overline{H} &= Q\brak{H - \lambda I}Q^\top\\
+	&= QHQ^\top - \lambda QIQ^\top\\
+	&= QHQ^\top - \lambda I\\
+\overline{H} +\lambda I &= QHQ^\top
+\end{align}
+which is a similarity tranformation.\\
+Here, once we finding the eigenvalue and it is in the last diagonal element, we will leave it as it is and then focus on smaller matrix block present diagonally above the eigenvalue and then use the same technique to push the next eigenvalue to the next diagonal element. We will continue to do this till all the eigenvalues are present in the diagonal. This is know as deflation.
+\begin{align}
+H  - \lambda I = QR\\
+R = \myvec{\times & \times & \cdots & \times\\
+	0 & \times & \cdots & \times\\
+	\vdots & \vdots & \ddots & \times\\
+	0 & 0 & \cdots & 0}
+\end{align}
+$RQ$ Will also be in the same form
+\begin{align}
+\overline{H} = RQ+\lambda I = \myvec{\overline{H_1} & \vec{h}_1\\0^\top & \lambda}
+\end{align}
+\subsection{Code}
+\begin{verbatim}
+#include <stdio.h>
+#include <stdlib.h>
+#include <complex.h>
+#include <math.h>
+#include "functions.h"
 
-where \( c = \cos(\theta) \) and \( s = \sin(\theta) \) for an angle \( \theta \), chosen such that the element below the diagonal in the matrix \( A \) is eliminated.
+double complex **qr_converge_rayleigh(double complex **A, int dim) {
+    double complex **H = makehessberg(A, dim);
+    double complex sigma;
+    double tolerance = 1e-10;
 
-\subsubsection{Steps in the QR Decomposition Algorithm}
-The algorithm proceeds as follows:
-\begin{enumerate}
-    \item Initialize \( A \) as the input matrix, \( Q = I \) (identity matrix), and \( R = A \).
-    \item Iterate through the columns of \( A \), and for each pair of elements in the column, compute the necessary Givens rotation matrix to zero out the subdiagonal element.
-    \item Apply the Givens rotation to both \( A \) and \( Q \) in each iteration.
-    \item The resulting matrix \( R \) will be upper triangular, and the product of all the Givens rotation matrices accumulated in \( Q \) will form the orthogonal matrix \( Q \).
-\end{enumerate}
+    for (int m = dim; m > 1; m--) {
+        int iterations = 0;
 
-The implementation in \texttt{qr.c} handles the iterative application of the Givens rotations and the accumulation of the orthogonal matrix \( Q \).
+        while (iterations < 20*dim) {
+            iterations++;
+            sigma = H[m-1][m-1];
+\end{verbatim}
+Every thing is same as in QR except we will introduce a shift and then remove the shift at the end of each iteration. We are choose the shift to be the last diagonal element of current $\overline{H}$
+\begin{verbatim}
+     double complex **sigmaI = Matscale(identity(dim), dim, dim, sigma);
+     double complex **H_shifted = Matsub(H, sigmaI, dim, dim);
+     double complex **Q_T = identity(dim);
+\end{verbatim}
+Introducing the shift.
+\begin{verbatim}
+  for (int p = 1; p < m; p++) {
+       double complex xi = H_shifted[p-1][p-1];
+       double complex xj = H_shifted[p][p-1];
 
-\subsection{Rayleigh Quotient Iteration (rayleigh.c)}
-Rayleigh Quotient iteration is an iterative method used to find eigenvalues of a matrix, which can be especially useful when computing the dominant eigenvalue. The method uses the Rayleigh quotient as an approximation for the eigenvalue:
+       if (cabs(xj) < tolerance) {
+                   continue;
+        }
+                
+     double complex c = conj(xi)/(csqrt(cabs(xi)*cabs(xi)+cabs(xj)*cabs(xj)));
+     double complex s = conj(xj)/(csqrt(cabs(xi)*cabs(xi)+cabs(xj)*cabs(xj)));
+       	
+       double complex **Gi = identity(dim);
+       Gi[p-1][p-1] = c;
+       Gi[p-1][p] = s;
+       Gi[p][p-1] = -conj(s);
+       Gi[p][p] = conj(c);
+           
+       H_shifted = Matmul(Gi, H_shifted, dim, dim, dim);
+       Q_T = Matmul(Q_T, transposeMat(Gi, dim, dim), dim, dim, dim);
+       freeMat(Gi, dim);
+   }
 
-\[
-\lambda = \frac{v^T A v}{v^T v}
-\]
+       H = Matmul(H_shifted, Q_T, dim, dim, dim);
+       H = Matadd(H, sigmaI, dim, dim);
+\end{verbatim}
+Adding back the shift
+\begin{verbatim}
 
-where \( v \) is the current vector approximation to the eigenvector. The basic idea of the Rayleigh Quotient iteration is to refine the approximation by solving for the eigenvector corresponding to the largest eigenvalue of a shifted matrix.
+            freeMat(sigmaI, dim);
+            freeMat(H_shifted, dim);
+            freeMat(Q_T, dim);
 
-\subsubsection{Steps in the Rayleigh Quotient Iteration Algorithm}
-The steps for Rayleigh Quotient iteration are as follows:
-\begin{enumerate}
-    \item Start with an initial guess for the eigenvector \( v_0 \).
-    \item Compute the Rayleigh quotient \( \lambda_0 = \frac{v_0^T A v_0}{v_0^T v_0} \).
-    \item Shift the matrix \( A \) by subtracting \( \lambda_0 I \) from it, forming the shifted matrix \( A - \lambda_0 I \).
-    \item Solve the linear system \( (A - \lambda_0 I) v_1 = v_0 \) for the new vector \( v_1 \).
-    \item Normalize \( v_1 \) and repeat the process, refining both the eigenvalue and eigenvector with each iteration.
-\end{enumerate}
+                if (cabs(H[m-1][m-2]) > tolerance) {
+                    continue;
+                }
+                else{
+                	break;
+                }
+        }
+    }
+    return H;
+}
+\end{verbatim}
+Returning the upper triangular matrix
+\subsection{Final code}
+\begin{verbatim}
+#include <stdio.h>
+#include <stdlib.h>
+#include <complex.h>
+#include <math.h>
+#include "functions.h"
 
-The implementation of this method in \texttt{rayleigh.c} allows for the iterative calculation of eigenvalues with high accuracy.
+void eigenvalues(double complex **A, int dim) {
+    double complex **H = makehessberg(A, dim);
+    double complex sigma;
+    double tolerance = 1e-10;
 
-\subsection{Code Explanation}
-The following sections explain the contents of the \texttt{qr.c} and \texttt{rayleigh.c} files.
+    for (int m = dim; m > 1; m--) {
+        int iterations = 0;
 
-\subsubsection{qr.c}
-The \texttt{qr.c} file contains the implementation for performing QR decomposition using Givens rotations. The main functions in the file are:
+        while (iterations < 20*dim) {
+            iterations++;
+            sigma = H[m-1][m-1];
 
-\begin{itemize}
-    \item \texttt{givens\_rotation(double* A, int m, int n, int i, int j)}: This function computes the Givens rotation matrix to zero out the element \( A[i,j] \) in the matrix \( A \).
-    \item \texttt{qr\_decomposition(double* A, double* Q, double* R, int m, int n)}: This function applies the Givens rotations iteratively to compute the QR decomposition of matrix \( A \). It updates matrices \( Q \) and \( R \) accordingly.
-\end{itemize}
+            double complex **sigmaI = Matscale(identity(dim), dim, dim, sigma);
+            double complex **H_shifted = Matsub(H, sigmaI, dim, dim);
 
-\subsubsection{rayleigh.c}
-The \texttt{rayleigh.c} file implements the Rayleigh Quotient iteration method for finding eigenvalues. The main functions in the file are:
+            double complex **Q_T = identity(dim);
 
-\begin{itemize}
-    \item \texttt{rayleigh\_quotient(double* A, double* v, int n)}: This function computes the Rayleigh quotient \( \lambda = \frac{v^T A v}{v^T v} \).
-    \item \texttt{rayleigh\_iteration(double* A, double* v, int n, int max\_iter)}: This function performs the Rayleigh Quotient iteration, refining the eigenvalue and eigenvector with each iteration.
-\end{itemize}
+            for (int p = 1; p < m; p++) {
+                double complex xi = H_shifted[p-1][p-1];
+                double complex xj = H_shifted[p][p-1];
 
-The code in \texttt{rayleigh.c} iteratively refines both the eigenvalue and eigenvector using the Rayleigh quotient and shifts to converge to the true eigenvalue.
+                if (cabs(xj) < tolerance) {
+                    continue;
+                }
 
-\subsection{Conclusion}
-The QR decomposition algorithm, implemented in \texttt{qr.c} using Givens rotations, is a stable and efficient method for decomposing matrices. The Rayleigh Quotient iteration, implemented in \texttt{rayleigh.c}, provides an iterative technique for refining eigenvalue approximations. Both algorithms play crucial roles in numerical linear algebra and are essential tools for solving systems of linear equations and finding eigenvalues.
+     double complex c = conj(xi)/(csqrt(cabs(xi)*cabs(xi)+cabs(xj)*cabs(xj)));
+     double complex s = conj(xj)/(csqrt(cabs(xi)*cabs(xi)+cabs(xj)*cabs(xj)));
 
-\section{QR with Rayleigh Quotient method}
-\textit{(Content derived from qr.c, explaining its importance for eigenvalue convergence.)}
+                double complex **Gi = identity(dim);
+                Gi[p-1][p-1] = c;
+                Gi[p-1][p] = s;
+                Gi[p][p-1] = -conj(s);
+                Gi[p][p] = conj(c);
 
+                H_shifted = Matmul(Gi, H_shifted, dim, dim, dim);
+                Q_T = Matmul(Q_T, transposeMat(Gi, dim, dim), dim, dim, dim);
+
+                freeMat(Gi, dim);
+            }
+
+            H = Matmul(H_shifted, Q_T, dim, dim, dim);
+            H = Matadd(H, sigmaI, dim, dim);
+
+            freeMat(sigmaI, dim);
+            freeMat(H_shifted, dim);
+            freeMat(Q_T, dim);
+
+                if (cabs(H[m-1][m-2]) > tolerance) {
+                    continue;
+                }
+                else{
+                	break;
+                }
+        }
+    }
+
+    calcuppereig(H,dim);
+}
+
+int main(){
+    int n;
+    scanf("%d", &n);
+    double complex** matrix = createMat(n, n);
+
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            double a, b;
+            scanf("%lf %lf", &a, &b);
+            matrix[i][j] = CMPLX(a, b);
+        }
+    }
+    eigenvalues(matrix, n);
+}
+\end{verbatim}
+\section{Conclusion}
+The reason for choosing the QR decomposition algorithm with Rayleigh shift mainly because of its time complexity $O\brak{n^3}$. It offers high numerical stability which is suitable for highly dense matrices. It also makes sure that it takes advantage of properties of the input matrix such as symmetry. It is also efficient for calculating eigenvalues of all types of matrices including complex matrices. It also handles ill-conditioned matrics much better than simple algorithms.
+The implementation in C can be found at \href{https://github.com/AbhimanyuKoushik/EE1030/tree/main/Eigen}{https://github.com/AbhimanyuKoushik/EE1030/tree/main/Eigen}.
 \section*{References}
 \begin{enumerate}
     \item W. H. Press et al., \textit{Numerical Recipes in C: The Art of Scientific Computing}.
     \item P. Arbenz, \textit{Lecture Notes on Numerical Linear Algebra}. 
         \href{https://people.inf.ethz.ch/arbenz/ewp/Lnotes/chapter4.pdf}{Link}.
+    \item Wikipedia - \textit{Eigenvalues Algorithm}
+        \href{https://en.wikipedia.org/wiki/Eigenvalue_algorithm}{Link}.
 \end{enumerate}
 
 \end{document}
