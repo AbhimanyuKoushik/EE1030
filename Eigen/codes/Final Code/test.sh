@@ -25,7 +25,6 @@ test(){
     testNo=$1
     inFile="tests/input/input_$testNo.txt"
     outFile="tests/output/output_$testNo.txt"
-    expectedFile="tests/expected/expected_$testNo.txt"
 
     cat $inFile | "$input_file.out" > $outFile
     echo "Eigen values of input #$testNo -> $outFile"
